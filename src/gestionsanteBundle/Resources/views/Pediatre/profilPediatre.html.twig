@@ -1,0 +1,163 @@
+{% extends 'gestionsanteBundle::layout.html.twig' %}
+{% block content %}
+
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="index2.html">Accueil</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="#">Liste des pédiatres</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Profil</span>
+            </div>
+            <h3 class="pageTitle h3">Profil</h3>
+        </div>
+    </div>
+
+
+
+    <!--debut-->
+
+    <div class="mainWrap without_sidebar" style="margin-top: 16px;">
+        <div class="main">
+            <div class="content">
+                <section class="post no_margin post_format_standard postAlter page type-page">
+                    <article class="post_content">
+                        <div class="post_text_area">
+
+                            <section class="no_padding">
+                                <div class="container">
+
+                                    <div class="columnsWrap sc_columns custom_columns sc_columns_count_2">
+                                        <div class="columns1_4 sc_column_item sc_column_item_1 odd first" style="
+    margin-top: 6px;
+">
+                                            <figure class="sc_image  sc_image_shape_round"> <img src="{{ asset('images/'~pediatres.image) }}" alt="">  </figure>
+                                        </div>
+                                        <div class="columns1_2 sc_column_item sc_column_item_2 even" style="
+    margin-top: 50px;
+">
+                                            <h1 class="sc_title sc_title_regular">{{ pediatres.nom }} {{ pediatres.prenom }}</h1>
+                                            <div class="">
+                                                <div class="footer_contacts">
+                                                    <span class="sc_icon icon-home theme_accent"></span>
+                                                    {{ pediatres.adresse }}<br>
+                                                    <span class="sc_icon icon-email theme_accent"></span>
+                                                    {{ pediatres.email }}<br>
+                                                    <span class="sc_icon icon-phone theme_accent"></span>
+                                                    +1 (44) 123-45-67
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="columns1_4 sc_column_item sc_column_item_2 even" style="margin-top: 30px;">
+                                            <div class="sc_button sc_button_style_global sc_button_size_huge squareButton global huge ">
+                                                <a href="#" class="icon-users">Consulter</a>
+                                                <br>
+                                                <a href="#" class="icon-pencil">Signaler</a>
+                                                <br>
+                                                <a href="#" class="icon-comment-1">Messages</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <section class="no_padding">
+
+                                <div class="columns3_4 sc_column_item sc_column_item_1 odd first" >
+
+                                    <div class="aligncenter margin_top_middle margin_bottom_small">
+                                        <h2 class="sc_title sc_title_regular">Présentation du professionnel de santé</h2>
+                                    </div>
+                                    <div><p>{{ pediatres.description }}</p></div>
+
+
+                                    <div class="sc_line sc_line_style_solid margin_bottom_middle"></div>
+                                </div>
+
+                            </section>
+
+                            <section class="no_padding">
+
+                                <div class="sc_section sc_alignleft columns3_4">
+                                    <div class="sc_accordion sc_accordion_style_2 margin_bottom_small" data-active="0">
+                                        <div class="sc_accordion_item odd first">
+                                            <h4 class="sc_accordion_title">Formation</h4>
+                                            <div class="sc_accordion_content"> {{ pediatres.formation }}</div>
+                                        </div>
+                                        <div class="sc_accordion_item even">
+                                            <h4 class="sc_accordion_title">Spécialité</h4>
+                                            <div class="sc_accordion_content">{{ pediatres.specialite }}</div>
+                                        </div>
+                                        <div class="sc_accordion_item odd">
+                                            <h4 class="sc_accordion_title">Parcours professionnel</h4>
+                                            <div class="sc_accordion_content">{{ pediatres.parcours }}</div>
+                                        </div>
+                                    </div>
+                                    <div id="popup_shortcode_2" class="sc_popup sc_popup_light mfp-with-anim mfp-hide">
+                                        <h4>Shortcode &#8220;Accordion&#8221;</h4>
+                                        <p>Shortcode text for example above:</p>
+                                        <pre>&lt;div class="sc_accordion sc_accordion_style_2 margin_bottom_small" data-active="0"&gt; &lt;div class="sc_accordion_item odd first"&gt; &lt;h4 class="sc_accordion_title"&gt;Lorem ipsum dolor sit amet&lt;/h4&gt; &lt;div class="sc_accordion_content"&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. &lt;/div&gt; &lt;/div&gt; &lt;div class="sc_accordion_item even"&gt; &lt;h4 class="sc_accordion_title"&gt;Consectetur adipisicing elit&lt;/h4&gt; &lt;div class="sc_accordion_content"&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</pre>
+                                    </div>
+                                </div>
+
+                            </section>
+
+
+
+                            <section class="no_padding">
+
+                            </section>
+
+
+
+                        </div>
+                    </article>
+                </section>
+                </br>
+                </br>
+                </br>
+                <section>
+                    <article>
+                    <div class="sc_skills sc_skills_counter" data-type="counter" data-subtitle="Skills">
+                        <div class="columnsWrap sc_skills_columns">
+                            <div class="sc_skills_column columns1_4">
+                                <div class="sc_skills_item sc_skills_style_4 even">
+                                    <div class="sc_skills_count">
+                                        <div class="sc_skills_total" data-start="0" data-stop="68" data-step="10" data-max="1000" data-speed="35" data-duration="238" data-ed="">0</div>
+                                    </div>
+                                    <div class="sc_skills_info">Likes</div>
+                                </div>
+                            </div>s
+                            <div class="sc_skills_column columns1_4">
+                                <div class="sc_skills_item sc_skills_style_4 even">
+                                    <div class="sc_skills_count">
+                                        <div class="sc_skills_total" data-start="0" data-stop="68" data-step="10" data-max="1000" data-speed="35" data-duration="238" data-ed="">0</div>
+                                    </div>
+                                    <div class="sc_skills_info">Vues</div>
+                                </div>
+                            </div>
+                            <div class="sc_skills_column columns1_4">
+                                <div class="sc_skills_item sc_skills_style_4 even">
+                                    <div class="sc_skills_count">
+                                        <div class="sc_skills_total" data-start="0" data-stop="68" data-step="10" data-max="1000" data-speed="35" data-duration="238" data-ed="">0</div>
+                                    </div>
+                                    <div class="sc_skills_info">Rating</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </article>
+                </section>
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

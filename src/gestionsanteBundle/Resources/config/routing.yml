@@ -1,0 +1,39 @@
+gestionsante_homepage:
+    path:     /
+    defaults: { _controller: gestionsanteBundle:Default:index }
+
+listePediatre:
+    path:     /listePediatre
+    defaults: { _controller: gestionsanteBundle:Pediatre:listePediatre }
+
+profilPediatre:
+    path:     /profilPediatre/{id}/
+    defaults: { _controller: gestionsanteBundle:Pediatre:profilPediatre }
+
+inscriptionPediatre:
+    path:     /inscriptionPediatre
+    defaults: { _controller: gestionsanteBundle:Pediatre:inscrirePediatre }
+
+liste_article:
+    path:     /listeArticle
+    defaults: { _controller: gestionsanteBundle:Article:listeArticle }
+
+afficher_article:
+    path:     /afficherArticle/{id}/
+    defaults: { _controller: gestionsanteBundle:Article:afficherArticle }
+
+ajouter_article:
+    path:     /ajouterArticle
+    defaults: { _controller: gestionsanteBundle:Article:ajouterArticle }
+
+liste_tutoriel:
+    path:     /listeTutoriel
+    defaults: { _controller: gestionsanteBundle:Article:listeTutoriel }
+
+ajouter_tutoriel:
+    path:     /ajouterTutoriel
+    defaults: { _controller: gestionsanteBundle:Article:ajouterTutoriel }
+
+afficher_tutoriel:
+    path:     /afficherTutoriel/{id}/
+    defaults: { _controller: gestionsanteBundle:Article:afficherTutoriel }

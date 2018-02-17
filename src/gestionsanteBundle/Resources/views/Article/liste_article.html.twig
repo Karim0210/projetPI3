@@ -1,0 +1,241 @@
+{% extends 'gestionsanteBundle::layout.html.twig' %}
+{% block content %}
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="{{ asset('index.html') }}">Accueil</a>
+                <span class="breadcrumbs_delimiter">
+              <i class="icon-right-open-mini"></i>
+            </span>
+                <a class="all" href="#">Alimentation</a>
+                <span class="breadcrumbs_delimiter">
+              <i class="icon-right-open-mini"></i>
+            </span>
+                <span class="current">Liste des articles alimentaire</span>
+            </div>
+            <h3 class="pageTitle h3">Liste des articles alimentaire</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap with_sidebar sideBarRight">
+        <div class="main">
+            <div class="content">
+
+                <section class="no_margin no_padding">
+                    <div class="container">
+                        <div class="masonryWrap">
+                            <div class="isotopeFiltr">
+                                <ul>
+                                    <li class="squareButton active">
+                                        <a href="#" data-filter="*">All</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_71">Populaire</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_66">Recette</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_61">Allaitement</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_64">Diversification alimentaire</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_65">holidays</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_68">bio</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <section class="masonry isotope inited" data-columns="2" style="position: relative; height: 3981.19px;">
+                                {% for article in articles %}
+                                    {% if article.type == "article" %}
+                                <article class="isotopeElement post_format_standard odd flt_71 flt_66 flt_61 isotopeElementShow" style="opacity: 1; width: 450px; position: absolute; left: 0px; top: 0px;">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease inited" data-image="images/1317x2000.png" data-title="Summer Childcare Questions">
+                                            <img alt="Summer Childcare Questions" src="{{ asset('images/1150x647.png') }}">
+                                            <span class="hoverShadow"></span><a href="{{ asset('images/1317x2000.png') }}" title="Summer Childcare Questions" rel="prettyPhoto[slideshow]" class="inited"><span class="hoverIcon"></span></a></div>
+                                        <h4>
+                                            <a href="{{  path('afficher_article',{'id': article.id} )  }}">{{ article.nom }}</a>
+                                        </h4>
+                                        <p>cette article est publié par {{ article.autheur }}</p>
+                                        <div class="masonryInfo">
+                                            Poster par
+                                            <a href="#" class="post_date">{{ article.autheur }}</a>
+                                        </div>
+                                        <div class="masonryMore inited">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 142" href="#">{{ article.vues }}</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-star-1" title="Rating - 85.5" href="#">{{ article.likes }}</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="954" data-likes="2" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 2" href="#">
+                                                        <span class="likePost">{{ article.likes }}</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                        {% endif %}
+                                {% endfor %}
+                            </section>
+                        </div>
+
+                        <div id="pagination" class="pagination">
+                            <ul class="pageLibrary">
+                                <li class="pager_pages libPage">
+                                    Page
+                                    <input class="navInput" readonly="readonly" type="text" size="1" value="1"> of 2
+                                    <div id="pageNavSlider" class="boxShadow pageFocusBlock navPadding" style="">
+                                        <div class="sc_slider sc_slider_swiper sc_slider_controls sc_slider_controls_top sc_slider_nopagination sc_slider_noautoplay swiper-slider-container">
+                                            <ul class="slides swiper-wrapper" data-current-slide="1">
+                                                <li class="swiper-slide">
+                                                    <div class="pageNumber">
+                                                        <table>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="#" class="active">1</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">2</a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul class="flex-direction-nav">
+                                            <li>
+                                                <a class="flex-prev" href="#">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="flex-next" href="#">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pager_next ico right squareButton light">
+                                    <a href="#">Next </a>
+                                </li>
+                                <li class="pager_last ico right squareButton light">
+                                    <a href="#">Last </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+            <div id="sidebar_main" class="widget_area sidebar_main sidebar">
+                <aside class="widgetWrap hrShadow widget widget_subcategories">
+                    <h3 class="title">Categories</h3>
+                    <div class="widget_subcategories_inner">
+                        <ul>
+                            <li class="cat-item dropMenu">
+                                <a href="#">de 1 à 3 ans</a>
+                            </li>
+                            <li class="cat-item dropMenu">
+                                <a href="#">de 3 à 6 ans</a>
+                            </li>
+                            <li class="cat-item dropMenu">
+                                <a href="#">de 6 à 11 ans</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <aside class="widgetWrap hrShadow widget widget_popular_posts">
+                    <h3 class="title">Popular</h3>
+                    <div class="popular_and_commented_tabs tabs_area inited ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <ul class="tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                            <li class="squareButtonlite ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="widget_popular_10" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true">
+                                <a href="{{ asset('#widget_popular_10') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Views</a>
+                            </li>
+                            <li class="squareButtonlite ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="widget_popular_11" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false">
+                                <a href="{{ asset('#widget_popular_11') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Likes</a>
+                            </li>
+                            <li class="squareButtonlite ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="widget_popular_12" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false">
+                                <a href="{{ asset('#widget_popular_12') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Comments</a>
+                            </li>
+                        </ul>
+                        <div class="tab_content ui-tabs-panel ui-widget-content ui-corner-bottom" id="widget_popular_10" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style="display: block;">
+                            {% for article in articles %}
+                                {% if article.type == "article" %}
+                            <article class="post_item no_thumb first">
+                                <h5 class="post_title">
+                                    <a href="#">{{ article.nom }}</a>
+                                </h5>
+                                <div class="post_info">
+                                    <span class="post_date">{{ article.autheur }}</span>
+                                    <span class="post_comments">
+                        <a href="#">
+                          <span class="comments_icon icon-eye"></span>
+                          <span class="post_comments_number">{{ article.vues }}</span>
+                        </a>
+                      </span>
+                                </div>
+                            </article>
+                                    {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </aside>
+                <aside class="widgetWrap widget widget_recent_posts">
+                    <h3 class="title">Recent posts</h3>
+                    {% for article in articles %}
+                        {% if article.type == "article" %}
+                        <article class="post_item with_thumb first">
+                            <div class="post_thumb">
+                                <img alt="How to Teach Children to Think for Themselves" src="{{ asset('images/75x75.png') }}">
+                            </div>
+                            <h5 class="post_title">
+                                <a href="#">{{ article.nom }}</a>
+                            </h5>
+                            <div class="post_info">
+                            <span class="post_author">
+                    by
+                    <a href="#">{{ article.autheur }}</a>
+                  </span>
+                                <span class="post_comments">
+                    <a href="#">
+                      <span class="comments_icon icon-eye"></span>
+                      <span class="post_comments_number">{{ article.vues }}</span>
+                    </a>
+                  </span>
+                            </div>
+                        </article>
+                            {% endif %}
+                    {% endfor %}
+                </aside>
+                <aside class="widgetWrap widget widget_recent_posts">
+                    <div class="sc_button sc_button_style_global sc_button_size_big squareButton global big  ico margin_bottom_mini">
+                        <a href="{{ path('ajouter_article') }}" class="icon-code">Ajouter article</a>
+                    </div>
+                </aside>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
