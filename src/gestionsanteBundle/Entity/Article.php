@@ -279,5 +279,8 @@ class Article
     {
         return $this->type;
     }
+
+
+
 }
 

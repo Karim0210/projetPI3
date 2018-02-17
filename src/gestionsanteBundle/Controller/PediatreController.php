@@ -51,8 +51,19 @@ class PediatreController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $Pediatre=$em->getRepository(Pediatre::class)->find($id);
-        //var_dump($Pediatre);die;
+        $Pediatre->setVues($Pediatre->getVues()+1);
+        $Pediatre->setRating(($Pediatre->getLikes()*0.6)+($Pediatre->getVues()*0.4));
+        $em->flush();
         return $this->render('gestionsanteBundle:Pediatre:profilPediatre.html.twig',array('pediatres'=>$Pediatre));
+    }
+
+    public function likePediatreAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $Pediatre=$em->getRepository(Pediatre::class)->find($id);
+        $Pediatre->setLikes($Pediatre->getLikes()+1);
+        $em->flush();
+        return $this->redirectToRoute('listePediatre');
     }
 
 
