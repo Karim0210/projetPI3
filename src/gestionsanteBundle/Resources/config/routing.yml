@@ -18,6 +18,15 @@ LikePediatre:
     path:     /likePediatre/{id}/
     defaults: { _controller: gestionsanteBundle:Pediatre:likePediatre }
 
+quizPediatre:
+    path:     /quizPediatre/{id}/
+    defaults: { _controller: gestionsanteBundle:Pediatre:quizPediatre }
+
+consulterPediatre:
+    path:     /consulterPediatre/{id}/
+    defaults: { _controller: gestionsanteBundle:Pediatre:consulterPediatre }
+
+
 liste_article:
     path:     /listeArticle
     defaults: { _controller: gestionsanteBundle:Article:listeArticle }

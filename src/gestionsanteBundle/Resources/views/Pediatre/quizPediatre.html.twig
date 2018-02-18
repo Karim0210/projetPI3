@@ -1,0 +1,121 @@
+{% extends 'gestionsanteBundle::layout.html.twig' %}
+{% block content %}
+
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="{{  path('gestionsante_homepage')}}">Accueil</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="{{  path('listePediatre')}}">Profil</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Avis</span>
+            </div>
+            <h3 class="pageTitle h3">Donnez votre avis</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+                <section class="post no_margin post_format_standard postAlter page type-page">
+                    <article class="post_content">
+                        <div class="post_text_area">
+
+
+
+                            <section class="no_padding">
+                                <div class="container">
+                                    <div class="columnsWrap sc_columns sc_columns_count_3 margin_top_middle margin_bottom_middle">
+                                        <div class="columns2_3 sc_column_item sc_column_item_1 odd first span_2">
+                                            <div class="sc_contact_form sc_contact_form_contact contact_form_1">
+                                                <h1 class="title">Questions :</h1>
+                                                <form class="contact_1" method="post" name="form">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="required" for="contact_form_username">est-ce que vous etiez satisfaits par la consultation ?</label>
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q1" id="1"  value="1">OUI
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q1" id="2"  value="0">NON
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="required" for="contact_form_username">est-ce que vous trouvez le prix de la consultation est raisonable ?</label>
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q2"  value="1">OUI
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q2"  value="0">NON
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="required" for="contact_form_username">est-ce que vous avez eu des problèmes de communication avec votre pédiatre ?</label>
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q3"  value="1">OUI
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q3"  value="0">NON
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="required" for="contact_form_username">etes-vous prêts à faire une autre consultation avec votre pédiatre ?</label>
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q4"  value="1">OUI
+                                                            </td>
+                                                            <td>
+                                                                <input type="radio" name="q4"  value="0">NON
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td colspan="3" style="text-align: center">
+                                                                <input type="submit" value="valider" onclick="calculer()">
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+                                                    <label for="contact_form_username">NOTE : </label>
+                                                    <input type="text" id="r" name="result">
+                                                    <script type="text/javascript">
+                                                        function calculer()
+                                                        {
+                                                            var q1 = Number(document.form.q1.value);
+                                                            var q2 = Number(document.form.q2.value);
+                                                            var q3 = Number(document.form.q3.value);
+                                                            var q4 = Number(document.form.q4.value);
+                                                            var somme = q1+q2+q3+q4;
+                                                            document.getElementById('r').value= somme ;
+                                                        }
+                                                    </script>
+
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

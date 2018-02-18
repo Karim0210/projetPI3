@@ -47,7 +47,7 @@ class PediatreController extends Controller
              return $this->render('gestionsanteBundle:Pediatre:listePediatre.html.twig', array('pediatres'=>$Pediatre));
          }
 
-    public function profilPediatreAction(Request $request,$id)
+    public function profilPediatreAction($id)
     {
         $em=$this->getDoctrine()->getManager();
         $Pediatre=$em->getRepository(Pediatre::class)->find($id);
@@ -55,6 +55,19 @@ class PediatreController extends Controller
         $Pediatre->setRating(($Pediatre->getLikes()*0.6)+($Pediatre->getVues()*0.4));
         $em->flush();
         return $this->render('gestionsanteBundle:Pediatre:profilPediatre.html.twig',array('pediatres'=>$Pediatre));
+    }
+
+    public function consulterPediatreAction(Request $request,$id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $Pediatre=$em->getRepository(Pediatre::class)->find($id);
+        if($request->isMethod('POST'))
+        {
+            $P=$request->request->get('result');
+            var_dump($P);die;
+            //return $this->redirectToRoute('profilPediatre');
+        }
+        return $this->render('gestionsanteBundle:Pediatre:quizPediatre.html.twig',array('pediatres'=>$Pediatre));
     }
 
     public function likePediatreAction($id)
