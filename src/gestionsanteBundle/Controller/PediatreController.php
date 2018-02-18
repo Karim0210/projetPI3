@@ -29,6 +29,7 @@ class PediatreController extends Controller
             $Pediatre->setLikes("0");
             $Pediatre->setVues("0");
             $Pediatre->setRating("0");
+            $Pediatre->setQuiz("0");
             $em->persist($Pediatre);
             $em->flush();
             return $this->redirectToRoute('listePediatre');
@@ -52,7 +53,7 @@ class PediatreController extends Controller
         $em=$this->getDoctrine()->getManager();
         $Pediatre=$em->getRepository(Pediatre::class)->find($id);
         $Pediatre->setVues($Pediatre->getVues()+1);
-        $Pediatre->setRating(($Pediatre->getLikes()*0.6)+($Pediatre->getVues()*0.4));
+        $Pediatre->setRating(($Pediatre->getQuiz()*0.6)+($Pediatre->getLikes()*0.3)+($Pediatre->getVues()*0.1));
         $em->flush();
         return $this->render('gestionsanteBundle:Pediatre:profilPediatre.html.twig',array('pediatres'=>$Pediatre));
     }
@@ -63,9 +64,10 @@ class PediatreController extends Controller
         $Pediatre=$em->getRepository(Pediatre::class)->find($id);
         if($request->isMethod('POST'))
         {
-            $P=$request->request->get('result');
-            var_dump($P);die;
-            //return $this->redirectToRoute('profilPediatre');
+            $r=$request->request->get('result');
+            $Pediatre->setQuiz($Pediatre->getQuiz()+$r);
+            $em->flush();
+            return $this->redirectToRoute('listePediatre');
         }
         return $this->render('gestionsanteBundle:Pediatre:quizPediatre.html.twig',array('pediatres'=>$Pediatre));
     }

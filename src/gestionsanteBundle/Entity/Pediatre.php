@@ -156,6 +156,31 @@ class Pediatre
 
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="quiz", type="integer")
+     */
+    private $quiz;
+
+    /**
+     * @return int
+     */
+    public function getQuiz()
+    {
+        return $this->quiz;
+    }
+
+    /**
+     * @param int $quiz
+     */
+    public function setQuiz($quiz)
+    {
+        $this->quiz = $quiz;
+    }
+
+
+
+    /**
      * Get id
      *
      * @return int
