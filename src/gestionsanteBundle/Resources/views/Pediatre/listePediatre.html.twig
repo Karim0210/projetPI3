@@ -4,7 +4,7 @@
     <div id="topOfPage" class="topTabsWrap">
         <div class="main">
             <div class="speedBar">
-                <a class="home" href="index2.html">Accueil</a>
+                <a class="home" href="{{ path('gestionsante_homepage') }}">Accueil</a>
                 <span class="breadcrumbs_delimiter">
 							<i class="icon-right-open-mini"></i>
 						</span>
@@ -49,11 +49,16 @@
                                 <ul>
                                     <li class="squareButton light ico" style="margin-left: 300px;">
                                         <div class="sc_button sc_button_style_global sc_button_size_medium squareButton global medium">
-                                            <a href="{{ path('inscriptionPediatre') }}" class="" style="margin-left: 800px;">S'inscrire</a>
+                                            <a href="{{ path('inscriptionPediatre') }}" class="" style="margin-left: 800px;">S'inscrire</a></br>
+                                            <a href="{{ path('listePediatreTrier_DQL') }}" class="" style="margin-left: 800px;">Top 3</a>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
+                            </br>
+                            </br>
+                            </br>
+                            </br>
                             <section class="masonry isotope inited" data-columns="4" style="position: relative; height: 1441.92px;">
                                 {% for pediatre in pediatres %}
                                 {% if pediatre.demande == "1" %}

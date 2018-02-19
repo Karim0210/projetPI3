@@ -1,0 +1,69 @@
+{% extends 'gestionsanteBundle::layout.html.twig' %}
+{% block content %}
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="{{ path('gestionsante_homepage') }}">Accueil</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="#">pédiatres</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Top 3 des pédiatres</span>
+            </div>
+            <h3 class="pageTitle h3">Top 3 des pédiatres</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+                {% for pediatre in pediatres %}
+                <section class="no_margin no_padding">
+                    <div class="container">
+                        <div class="sc_team no_padding">
+                            <div class="columnsWrap sc_columns no_margin sc_columns_count_3">
+                                <div class="columns1_3" data-animation=" fadeInUp">
+                                    <div class="sc_team_item sc_team_item_1">
+                                        <div class="sc_team_item_avatar">
+                                            <img alt="{{ asset('images/'~pediatre.image) }}" src="{{ asset('images/'~pediatre.image) }}">
+                                            <div class="sc_team_item_description">{{ pediatre.description }}</div>
+                                        </div>
+                                        <div class="sc_team_item_info">
+                                            <h3 class="sc_team_item_title">
+                                                <a href="{{  path('profilPediatre',{'id': pediatre.id} )  }}">{{ pediatre.nom }} {{ pediatre.prenom }}</a>
+                                            </h3>
+                                            <div class="sc_team_item_position theme_accent2">{{ pediatre.specialite }}</div>
+                                            <ul class="sc_team_item_socials">
+                                                <li>
+                                                    <a href="#" class="social_icons social_facebook facebook facebook_image" target="_blank">
+                                                        <span></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="social_icons social_twitter twitter twitter_image" target="_blank">
+                                                        <span></span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="social_icons social_rss rss rss_image" target="_blank">
+                                                        <span></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </section>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

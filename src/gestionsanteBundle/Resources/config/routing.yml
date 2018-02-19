@@ -6,6 +6,10 @@ listePediatre:
     path:     /listePediatre
     defaults: { _controller: gestionsanteBundle:Pediatre:listePediatre }
 
+listePediatreTrier_DQL:
+    path:     /DQL/listePediatreTrier
+    defaults: { _controller: gestionsanteBundle:Pediatre:listePediatreTrier }
+
 profilPediatre:
     path:     /profilPediatre/{id}/
     defaults: { _controller: gestionsanteBundle:Pediatre:profilPediatre }

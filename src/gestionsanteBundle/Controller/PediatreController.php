@@ -48,6 +48,17 @@ class PediatreController extends Controller
              return $this->render('gestionsanteBundle:Pediatre:listePediatre.html.twig', array('pediatres'=>$Pediatre));
          }
 
+    public function listePediatreTrierAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $Pediatre=$em->getRepository(Pediatre::class)->findTrierDQL();
+        for ( $i=0 ; $i<3 ; $i++)
+        {
+            $P[$i]=$Pediatre[$i];
+        }
+        return $this->render('gestionsanteBundle:Pediatre:listePediatreTrier.html.twig', array('pediatres'=>$P));
+    }
+
     public function profilPediatreAction($id)
     {
         $em=$this->getDoctrine()->getManager();

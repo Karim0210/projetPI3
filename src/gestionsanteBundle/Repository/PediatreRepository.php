@@ -10,4 +10,9 @@ namespace gestionsanteBundle\Repository;
  */
 class PediatreRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTrierDQL()
+    {
+        $query=$this->getEntityManager()->createQuery("SELECT m FROM gestionsanteBundle:Pediatre m ORDER BY m.rating DESC ");
+        return $query->getResult();
+    }
 }
