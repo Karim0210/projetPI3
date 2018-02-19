@@ -52,7 +52,7 @@ class PediatreController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $Pediatre=$em->getRepository(Pediatre::class)->findTrierDQL();
-        for ( $i=0 ; $i<3 ; $i++)
+        for ( $i=0 ; $i<5 ; $i++)
         {
             $P[$i]=$Pediatre[$i];
         }
