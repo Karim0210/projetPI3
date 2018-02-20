@@ -39,6 +39,10 @@ afficher_article:
     path:     /afficherArticle/{id}/
     defaults: { _controller: gestionsanteBundle:Article:afficherArticle }
 
+listeArticleTrier_DQL:
+    path:     /DQL/listeArticleTrier
+    defaults: { _controller: gestionsanteBundle:Article:listeArticleTrier }
+
 ajouter_article:
     path:     /ajouterArticle
     defaults: { _controller: gestionsanteBundle:Article:ajouterArticle }
@@ -54,3 +58,7 @@ ajouter_tutoriel:
 afficher_tutoriel:
     path:     /afficherTutoriel/{id}/
     defaults: { _controller: gestionsanteBundle:Article:afficherTutoriel }
+
+list_rendez_vous:
+    path:     /listRendezVous
+    defaults: { _controller: gestionsanteBundle:RendezVous:listRendezVous }

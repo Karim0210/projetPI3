@@ -12,8 +12,33 @@ class ArticleController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $Article=$em->getRepository(Article::class)->findAll();
-        return $this->render('gestionsanteBundle:Article:liste_article.html.twig', array('articles'=>$Article));
+        $ArticleTrier=$em->getRepository(Article::class)->findTrierVuesDQL();
+        $ArticleNote=$em->getRepository(Article::class)->findTrierDQL();
+        for ( $i=0 ; $i<3 ; $i++)
+        {
+            $A[$i]=$ArticleTrier[$i];
+            $AN[$i]=$ArticleNote[$i];
+
+        }
+        return $this->render('gestionsanteBundle:Article:liste_article.html.twig', array(
+            'articles'=>$Article,
+            'articlesTri'=>$A,
+            'articlesNote'=>$AN
+
+        ));
     }
+
+    public function listeArticleTrierAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $Article=$em->getRepository(Article::class)->findTrierDQL();
+        for ( $i=0 ; $i<3 ; $i++)
+        {
+            $A[$i]=$Article[$i];
+        }
+        return $this->render('gestionsanteBundle:Article:liste_article_Trier.html.twig', array('articles'=>$A));
+    }
+
 
     public function ajouterTutorielAction(Request $request)
     {
@@ -63,6 +88,7 @@ class ArticleController extends Controller
             $Article->setAutheur($request->request->get('autheur'));
             $Article->setText($request->request->get('text'));
             $Article->setType("article");
+            $Article->setImage($request->request->get('image'));
             $em->persist($Article);
             $em->flush();
             return $this->redirectToRoute('liste_article');

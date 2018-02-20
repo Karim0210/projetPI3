@@ -56,8 +56,8 @@
                                 <article class="isotopeElement post_format_standard odd flt_71 flt_66 flt_61 isotopeElementShow" style="opacity: 1; width: 450px; position: absolute; left: 0px; top: 0px;">
                                     <div class="isotopePadding">
                                         <div class="thumb hoverIncrease inited" data-image="images/1317x2000.png" data-title="Summer Childcare Questions">
-                                            <img alt="Summer Childcare Questions" src="{{ asset('images/1150x647.png') }}">
-                                            <span class="hoverShadow"></span><a href="{{ asset('images/1317x2000.png') }}" title="Summer Childcare Questions" rel="prettyPhoto[slideshow]" class="inited"><span class="hoverIcon"></span></a></div>
+                                            <img alt="Summer Childcare Questions" src="{{ asset('images/'~article.image) }}">
+                                            <span class="hoverShadow"></span><a href="{{ asset('images/'~article.image) }}" title="Summer Childcare Questions" rel="prettyPhoto[slideshow]" class="inited"><span class="hoverIcon"></span></a></div>
                                         <h4>
                                             <a href="{{  path('afficher_article',{'id': article.id} )  }}">{{ article.nom }}</a>
                                         </h4>
@@ -68,17 +68,13 @@
                                         </div>
                                         <div class="masonryMore inited">
                                             <ul>
-                                                <li class="squareButton light ico">
-                                                    <a class="icon-link" title="More" href="#">More</a>
-                                                </li>
+
                                                 <li class="squareButton light ico">
                                                     <a class="icon-eye" title="Views - 142" href="#">{{ article.vues }}</a>
                                                 </li>
+
                                                 <li class="squareButton light ico">
-                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
-                                                </li>
-                                                <li class="squareButton light ico">
-                                                    <a class="icon-star-1" title="Rating - 85.5" href="#">{{ article.likes }}</a>
+                                                    <a class="icon-star-1" title="Rating - 85.5" href="#">{{ article.rating }}</a>
                                                 </li>
                                                 <li class="squareButton light ico likeButton like" data-postid="954" data-likes="2" data-title-like="Like" data-title-dislike="Dislike">
                                                     <a class="icon-heart-1" title="Like - 2" href="#">
@@ -165,32 +161,21 @@
                     </div>
                 </aside>
                 <aside class="widgetWrap hrShadow widget widget_popular_posts">
-                    <h3 class="title">Popular</h3>
+                    <a href="{{ path('listeArticleTrier_DQL') }}" class="title"><h3 class="title">Les plus vus</h3></a>
                     <div class="popular_and_commented_tabs tabs_area inited ui-tabs ui-widget ui-widget-content ui-corner-all">
-                        <ul class="tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                            <li class="squareButtonlite ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="widget_popular_10" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true">
-                                <a href="{{ asset('#widget_popular_10') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Views</a>
-                            </li>
-                            <li class="squareButtonlite ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="widget_popular_11" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false">
-                                <a href="{{ asset('#widget_popular_11') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Likes</a>
-                            </li>
-                            <li class="squareButtonlite ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="widget_popular_12" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false">
-                                <a href="{{ asset('#widget_popular_12') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Comments</a>
-                            </li>
-                        </ul>
                         <div class="tab_content ui-tabs-panel ui-widget-content ui-corner-bottom" id="widget_popular_10" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style="display: block;">
-                            {% for article in articles %}
-                                {% if article.type == "article" %}
+                            {% for at in articlesTri %}
+                                {% if at.type == "article" %}
                             <article class="post_item no_thumb first">
                                 <h5 class="post_title">
-                                    <a href="#">{{ article.nom }}</a>
+                                    <a href="#">{{ at.nom }}</a>
                                 </h5>
                                 <div class="post_info">
-                                    <span class="post_date">{{ article.autheur }}</span>
+                                    <span class="post_date">{{ at.autheur }}</span>
                                     <span class="post_comments">
                         <a href="#">
                           <span class="comments_icon icon-eye"></span>
-                          <span class="post_comments_number">{{ article.vues }}</span>
+                          <span class="post_comments_number">{{ at.vues }}</span>
                         </a>
                       </span>
                                 </div>
@@ -201,25 +186,25 @@
                     </div>
                 </aside>
                 <aside class="widgetWrap widget widget_recent_posts">
-                    <h3 class="title">Recent posts</h3>
-                    {% for article in articles %}
-                        {% if article.type == "article" %}
+                    <h3 class="title">Les mieux notés</h3>
+                    {% for an in articlesNote %}
+                        {% if an.type == "article" %}
                         <article class="post_item with_thumb first">
                             <div class="post_thumb">
-                                <img alt="How to Teach Children to Think for Themselves" src="{{ asset('images/75x75.png') }}">
+                                <img alt="How to Teach Children to Think for Themselves" src="{{ asset('images/'~an.image) }}">
                             </div>
                             <h5 class="post_title">
-                                <a href="#">{{ article.nom }}</a>
+                                <a href="#">{{ an.nom }}</a>
                             </h5>
                             <div class="post_info">
                             <span class="post_author">
                     by
-                    <a href="#">{{ article.autheur }}</a>
+                    <a href="#">{{ an.autheur }}</a>
                   </span>
                                 <span class="post_comments">
                     <a href="#">
                       <span class="comments_icon icon-eye"></span>
-                      <span class="post_comments_number">{{ article.vues }}</span>
+                      <span class="post_comments_number">{{ an.vues }}</span>
                     </a>
                   </span>
                             </div>

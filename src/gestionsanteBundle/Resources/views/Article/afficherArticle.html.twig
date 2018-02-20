@@ -27,7 +27,7 @@
                     <div class="container">
                         <article class="post_content">
                             <div class="thumb imgNav taphover">
-                                <img alt="" src="{{ asset('images/2000x1333.png') }}">
+                                <img alt="" src="{{ asset('images/'~articles.image) }}">
                                 <a class="taphover itemPrev" href="#">
                       <span class="itInf">
                         <span class="titleItem">Previous item</span>
@@ -43,235 +43,7 @@
                             </div>
 
                             <h1 class="post_title entry-title">{{ articles.nom }}</h1>
-                            <div class="reviewBlock sc_tabs inited ui-tabs ui-widget ui-widget-content ui-corner-all">
-                                <div class="popularFiltr">
-                                    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                                        <li class="squareButton ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="author-tabs" aria-labelledby="ui-id-1" aria-selected="true" aria-expanded="true">
-                                            <a href="{{ asset('#author-tabs') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Author</a>
-                                        </li>
-                                        <li class="squareButton ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="users-tabs" aria-labelledby="ui-id-2" aria-selected="false" aria-expanded="false">
-                                            <a href="{{ asset('#users-tabs') }}" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Users</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="ratingStars ui-tabs-panel ui-widget-content ui-corner-bottom" id="author-tabs" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style="display: block;">
-                                    <div class="ratBody">
-                                        <div class="ratingItem" data-mark="83">
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 83%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                        </div>
-                                        <span class="name">Reviews criteria 1</span>
-                                    </div>
-                                    <div class="ratBody">
-                                        <div class="ratingItem" data-mark="93">
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 93%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                        </div>
-                                        <span class="name">Reviews criteria 2</span>
-                                    </div>
-                                    <div class="ratBody">
-                                        <div class="ratingItem" data-mark="93">
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 93%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                        </div>
-                                        <span class="name">Reviews criteria 3</span>
-                                    </div>
-                                    <div class="ratBody">
-                                        <div class="ratingItem" data-mark="94">
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 94%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                        </div>
-                                        <span class="name">Reviews criteria 4</span>
-                                    </div>
-                                    <div class="infoTotal">
-                                        <div class="infoRat">Donec lacinia elementum nunc, sed condimentum eros dictum ut. Sed pretium lacinia tortor, ac porta sapien congue sed. Morbi quis nisl dolor. Vestibulum a lectus vel orci pulvinar consequat vitae et nibh. Pellentesque lectus urna, varius a ullamcorper quis, suscipit sed nisi. Donec eget euismod justo. Phasellus non lacus et turpis accumsan consequat sit amet </div>
-                                        <div class="totalWrap">
-                                            <div class="totalStar">
-                                                <div class="ratingItem" data-mark="90.8">
-                                                    <div class="starDefault">
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                    </div>
-                                                    <div class="starHover" style="width: 90.8%;">
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="totalRating" data-mark="90.8">90.8</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ratingStars ui-tabs-panel ui-widget-content ui-corner-bottom" id="users-tabs" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="true" style="display: none;">
-                                    <div class="ratBody">
-                                        <div class="ratingItem ratingEdit" data-mark="91">
-                                            <span class="ratBubble">91</span>
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 91%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <input type="hidden" name="reviews_marks[]" value="91">
-                                        </div>
-                                        <span class="name">Reviews criteria 1</span>
-                                    </div>
-                                    <div class="ratBody">
-                                        <div class="ratingItem ratingEdit" data-mark="63">
-                                            <span class="ratBubble">63</span>
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 63%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <input type="hidden" name="reviews_marks[]" value="63">
-                                        </div>
-                                        <span class="name">Reviews criteria 2</span>
-                                    </div>
-                                    <div class="ratBody">
-                                        <div class="ratingItem ratingEdit" data-mark="93">
-                                            <span class="ratBubble">93</span>
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 93%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <input type="hidden" name="reviews_marks[]" value="93">
-                                        </div>
-                                        <span class="name">Reviews criteria 3</span>
-                                    </div>
-                                    <div class="ratBody">
-                                        <div class="ratingItem ratingEdit" data-mark="66">
-                                            <span class="ratBubble">66</span>
-                                            <div class="starDefault">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <div class="starHover" style="width: 66%;">
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                                <span class="starReview"></span>
-                                            </div>
-                                            <input type="hidden" name="reviews_marks[]" value="66">
-                                        </div>
-                                        <span class="name">Reviews criteria 4</span>
-                                    </div>
-                                    <div class="accept">
-                                        <div class="squareButton global">
-                                            <a href="#" title="Accept your votes">Accept</a>
-                                        </div>
-                                    </div>
-                                    <div class="infoTotal">
-                                        <div class="infoRat">Summary rating from <b>1</b> user's marks. You can set own marks for this article - just click on stars above and press "Accept".</div>
-                                        <div class="totalWrap">
-                                            <div class="totalStar">
-                                                <div class="ratingItem" data-mark="78.3">
-                                                    <div class="starDefault">
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                    </div>
-                                                    <div class="starHover" style="width: 78.3%;">
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                        <span class="starReview"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="totalRating" data-mark="78.3">78.3</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="post_text_area">
                                 <p>{{ articles.text }}</p>
                                 <div class="itemInfo">
@@ -295,17 +67,14 @@
                                                 </ul>
                                             </li>
                                             <li class="squareButton light ico">
-                                                <a class="icon-eye" title="Views - 352" href="#">352</a>
+                                                <a class="icon-eye" title="Views - 352" href="#">{{ articles.vues }}</a>
                                             </li>
                                             <li class="squareButton light ico">
-                                                <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
-                                            </li>
-                                            <li class="squareButton light ico">
-                                                <a class="icon-star-1" title="Rating - 90.8" href="#">90.8</a>
+                                                <a class="icon-star-1" title="Rating - 90.8" href="#">{{ articles.rating }}</a>
                                             </li>
                                             <li class="squareButton light ico likeButton like" data-postid="942" data-likes="2" data-title-like="Like" data-title-dislike="Dislike">
                                                 <a class="icon-heart-1" title="Like - 2" href="#">
-                                                    <span class="likePost">2</span>
+                                                    <span class="likePost">{{ articles.likes }}</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -330,9 +99,9 @@
                 <section class="no_padding author vcard hrShadow">
                     <div class="container">
                         <h2 class="post_author_title">
-                            About author
+                            author
                             <span>
-                  <a href="#" class="fn">admin</a>
+                  <a href="#" class="fn">{{ articles.autheur }}</a>
                 </span>
                         </h2>
                     </div>

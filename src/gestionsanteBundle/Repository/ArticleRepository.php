@@ -10,4 +10,15 @@ namespace gestionsanteBundle\Repository;
  */
 class ArticleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTrierDQL()
+    {
+        $query=$this->getEntityManager()->createQuery("SELECT m FROM gestionsanteBundle:Article m ORDER BY m.rating DESC ");
+        return $query->getResult();
+    }
+
+    public function findTrierVuesDQL()
+    {
+        $query=$this->getEntityManager()->createQuery("SELECT m FROM gestionsanteBundle:Article m ORDER BY m.vues DESC ");
+        return $query->getResult();
+    }
 }

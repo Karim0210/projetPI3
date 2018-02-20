@@ -1,0 +1,140 @@
+{% extends 'gestionsanteBundle::layout.html.twig' %}
+{% block content %}
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="{{ path('gestionsante_homepage') }}">Accueil</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="#">Article</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Top 3 des articles</span>
+            </div>
+            <h3 class="pageTitle h3">Top 3 des articles</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+                <section class="no_margin no_padding">
+                    <div class="container">
+                        <div class="masonryWrap">
+
+                            <div class="" style="margin-top: 80px;">
+                                <div class="sc_team no_padding">
+                                    <div class="sc_columns columnsWrap">
+                                        {% for article in articles %}
+                                            <div class="columns1_3" data-animation=" fadeInUp">
+                                                <div class="sc_team_item sc_team_item_1 odd first">
+                                                    <div class="sc_team_item_avatar">
+                                                        <img alt="{{ asset('images/'~article.image) }}" src="{{ asset('images/'~article.image) }}">
+                                                        <div class="sc_team_item_description">
+                                                            <div class="sc_button sc_button_style_global sc_button_size_big squareButton fullSize global big">
+                                                                <a href="{{  path('afficher_article',{'id': article.id} )  }}" class="">Article</a> </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="sc_team_item_info">
+                                                        <h3 class="sc_team_item_title">
+                                                            <a href="#">{{ article.nom }}</a>
+                                                        </h3>
+                                                        <div class="sc_team_item_position theme_accent2">{{ article.autheur }}</div>
+                                                        <!--etoiles-->
+                                                        <div class="reviews_summary blog_reviews" >
+                                                            <div class="criteria_summary criteria_row" style="margin-top: -20px; margin-left: 33%;">
+                                                                <div class="ratingItem" data-mark="{{ article.rating }}">
+                                                                    <div class="starDefault">
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                    </div>
+                                                                    <div class="starHover" style="width:92.3%">
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                        <span class="starReview"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-->
+                                                        <ul class="sc_team_item_socials">
+                                                            <b>{{ article.text[:25] }}...</b>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor  %}
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        </br>
+                        </br>
+                        </br>
+                        <div id="pagination" class="pagination">
+                            <ul class="pageLibrary">
+                                <li class="pager_pages libPage">
+                                    Page
+                                    <input class="navInput" readonly="readonly" type="text" size="1" value="1"> of 1
+                                    <div id="pageNavSlider" class="boxShadow pageFocusBlock navPadding">
+                                        <div class="sc_slider sc_slider_swiper sc_slider_controls sc_slider_controls_top sc_slider_nopagination sc_slider_noautoplay swiper-slider-container">
+                                            <ul class="slides swiper-wrapper" data-current-slide="1">
+                                                <li class="swiper-slide">
+                                                    <div class="pageNumber">
+                                                        <table>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="#" class="active">1</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">2</a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul class="flex-direction-nav">
+                                            <li>
+                                                <a class="flex-prev" href="#">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="flex-next" href="#">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pager_next ico right squareButton light">
+                                    <a href="#">Next </a>
+                                </li>
+                                <li class="pager_last ico right squareButton light">
+                                    <a href="#">Last </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

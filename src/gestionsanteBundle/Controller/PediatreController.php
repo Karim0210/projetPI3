@@ -25,11 +25,13 @@ class PediatreController extends Controller
             $Pediatre->setFormation($request->get('formation'));
             $Pediatre->setParcours($request->get('parcours'));
             $Pediatre->setImage($request->get('image'));
+            $Pediatre->setNum($request->get('num'));
             $Pediatre->setDemande("0");
             $Pediatre->setLikes("0");
             $Pediatre->setVues("0");
             $Pediatre->setRating("0");
             $Pediatre->setQuiz("0");
+            $Pediatre->setNbrQuiz("0");
             $em->persist($Pediatre);
             $em->flush();
             return $this->redirectToRoute('listePediatre');
@@ -77,6 +79,7 @@ class PediatreController extends Controller
         {
             $r=$request->request->get('result');
             $Pediatre->setQuiz($Pediatre->getQuiz()+$r);
+            $Pediatre->setNbrQuiz($Pediatre->getNbrQuiz()+1);
             $em->flush();
             return $this->redirectToRoute('listePediatre');
         }

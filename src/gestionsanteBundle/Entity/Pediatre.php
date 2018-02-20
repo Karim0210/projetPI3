@@ -163,6 +163,52 @@ class Pediatre
     private $quiz;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="num", type="integer")
+     */
+    private $num;
+
+    /**
+     * @return int
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * @param int $num
+     */
+    public function setNum($num)
+    {
+        $this->num = $num;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNbrQuiz()
+    {
+        return $this->nbrQuiz;
+    }
+
+    /**
+     * @param int $nbrQuiz
+     */
+    public function setNbrQuiz($nbrQuiz)
+    {
+        $this->nbrQuiz = $nbrQuiz;
+    }
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="nbrQuiz", type="integer")
+     */
+    private $nbrQuiz;
+
+    /**
      * @return int
      */
     public function getQuiz()

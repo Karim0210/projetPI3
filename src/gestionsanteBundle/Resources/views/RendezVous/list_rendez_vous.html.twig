@@ -1,0 +1,223 @@
+{% extends 'gestionsanteBundle::Layout.html.twig' %}
+{% block content %}
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="">Home</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="">Rdv</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Vos Rendez-vous du {{  "now"|date("m/d/Y")  }}</span>
+            </div>
+            <h3 class="pageTitle h3">Vos Rendez-vous du {{  "now"|date("m/d/Y")  }} </h3>
+        </div>
+    </div>
+    </br>
+    </br>
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+
+                <section class="no_padding">
+                    <div class="container">
+
+                        <section class="post tribe_events_wrapper">
+                            <article class="post_content">
+                                <div id="tribe-events-pg-template">
+                                    <div id="tribe-events" class="tribe-no-js">
+                                        <div class="tribe-events-before-html"></div>
+
+                                        <div id="tribe-events-content-wrapper" class="tribe-clearfix">
+                                            <input type="hidden" id="tribe-events-list-hash" value="">
+                                            <!--
+                                             <div id="tribe-events-bar">
+                                                 <form id="tribe-bar-form" class="tribe-clearfix" name="tribe-bar-form" method="post" action="#">
+                                                     <div id="tribe-bar-collapse-toggle">
+                                                         Find Events<span class="tribe-bar-toggle-arrow">
+                                                                     </span>
+                                                     </div>
+                                                     <div id="tribe-bar-views">
+                                                         <div class="tribe-bar-views-inner tribe-clearfix">
+                                                             <h3 class="tribe-events-visuallyhidden">Event Views Navigation</h3>
+                                                             <label>View As</label>
+                                                             <select class="tribe-bar-views-select tribe-no-param" name="tribe-bar-view">
+                                                                 <option value="features-tools-events-calendar.html" data-view="list">List</option>
+                                                                 <option selected value="features-tools-events-calendar-month.html" data-view="month">Month</option>
+                                                                 <option value="features-tools-events-calendar-today.html" data-view="day">Day</option>
+                                                             </select>
+                                                         </div>
+                                                     </div>
+                                                     <div class="tribe-bar-filters">
+                                                         <div class="tribe-bar-filters-inner tribe-clearfix">
+                                                             <div class="tribe-bar-date-filter">
+                                                                 <label class="label-tribe-bar-date" for="tribe-bar-date">Events From</label>
+                                                                 <input type="text" name="tribe-bar-date" id="tribe-bar-date" value="" placeholder="Date">
+                                                                 <input type="hidden" name="tribe-bar-date-day" id="tribe-bar-date-day" class="tribe-no-param" value="">
+                                                             </div>
+                                                             <div class="tribe-bar-search-filter">
+                                                                 <label class="label-tribe-bar-search" for="tribe-bar-search">Search</label>
+                                                                 <input type="text" name="tribe-bar-search" id="tribe-bar-search" value="" placeholder="Search">
+                                                             </div>
+                                                             <div class="tribe-bar-submit">
+                                                                 <input class="tribe-events-button tribe-no-param" type="submit" name="submit-bar" value="Find Events"/>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </form>
+                                             </div>-->
+                                            <div id="tribe-events-content" class="tribe-events-month">
+                                                <h2 class="tribe-events-page-title">
+                                                    Vos Rendez-vous de la semaine de Fevrier 2018
+                                                </h2>
+                                                <div class="tribe-events-notices">
+                                                    <ul>
+                                                            <li>Aucun resultat trouvé.</li>
+                                                    </ul>
+                                                </div>
+                                                <div id="tribe-events-header" data-title="Events for November 2015 | Party | Event Categories | The Lucky Pint – Irish tavern" data-view="month" data-date="2015-11" data-baseurl="#">
+                                                    <h3 class="tribe-events-visuallyhidden">Calendar Month Navigation</h3>
+                                                    <ul class="tribe-events-sub-nav">
+                                                        <li class="tribe-events-nav-previous">
+                                                            <a data-month="2015-10" href="#" rel="prev" class="sc_button sc_button_style_filled sc_button_tribe">
+                                                                <span>«</span> Janvier
+                                                            </a>
+                                                        </li>
+                                                        <li class="tribe-events-nav-next">
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <table class="tribe-events-calendar">
+                                                    <thead>
+                                                    <tr>
+                                                        <th id="tribe-events-monday" title="Monday" data-day-abbr="Mon">{{  "now"|date("l")  }}</th>
+                                                        <th id="tribe-events-tuesday" title="Tuesday" data-day-abbr="Tue">Tue</th>
+                                                        <th id="tribe-events-wednesday" title="Wednesday" data-day-abbr="Wed">Wed</th>
+                                                        <th id="tribe-events-thursday" title="Thursday" data-day-abbr="Thu">Thu</th>
+                                                        <th id="tribe-events-friday" title="Friday" data-day-abbr="Fri">Fri</th>
+                                                        <th id="tribe-events-saturday" title="Saturday" data-day-abbr="Sat">Sat</th>
+                                                        <th id="tribe-events-sunday" title="Sunday" data-day-abbr="Sun">Sun</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="vcalendar">
+                                                    <tr>
+                                                        {% for i in "now"|date("d").."now"|date("d")+6 %}
+                                                        {% if i ==  "now"|date("d")%}
+                                                        <td class="tribe-events-thismonth tribe-events-present mobile-trigger tribe-event-day-26" data-day="26">
+                                                            {% else %}
+                                                        <td class="tribe-events-thismonth tribe-events-past mobile-trigger tribe-event-day-26" data-day="26">
+                                                            {% endif %}
+                                                            <div id="tribe-events-daynum-261">
+                                                                {{ i }}
+                                                            </div>
+                                                            <div style="margin-left: 5%">
+
+                                                                {% for rdv in rdvs %}
+                                                                    {% if rdv.dateRendezVous|date("d") ==  i%}
+                                                                        <a href="{{ path('rdv', { 'id':rdv.id }) }}">
+                                                                            <b>Nom du client :</b>  {{ rdv.id }}<br>
+                                                                        </a>
+                                                                    {% endif %}
+                                                                {% endfor %}
+
+                                                            </div>
+                                                            {% endfor %}
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div id="tribe-events-footer">
+                                                    <h3 class="tribe-events-visuallyhidden">Calendar Month Navigation</h3>
+                                                    <ul class="tribe-events-sub-nav">
+                                                        <li class="tribe-events-nav-previous">
+                                                            <a data-month="2015-10" href="#" rel="prev" class="sc_button sc_button_style_filled sc_button_tribe">
+                                                                <span>«</span> Janvier
+                                                            </a>
+                                                        </li>
+                                                        <li class="tribe-events-nav-next"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="tribe-clear"></div>
+                                        </div>
+                                        <div class="tribe-events-after-html"></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="upToScrollWrapper">
+        <div class="upToScroll">
+            <a href="#" class="scrollToTop" title="Back to top">
+            </a>
+        </div>
+    </div>
+
+    <div class="copyWrap">
+        <div class="copy main">
+            <div class="copyright">
+                <a href="http://themeforest.net/user/axiomthemes/portfolio">Axiom</a> &copy; 2015 All Rights Reserved
+                <a href="#">Terms of Use</a>
+                and <a href="#">Privacy Policy</a>
+            </div>
+            <div class="copy_socials socPage">
+                <ul>
+                    <li>
+                        <a class="social_icons social_facebook facebook_image" target="_blank" href="http://facebook.com">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons social_pinterest pinterest_image" target="_blank" href="http://pinterest.com">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons social_twitter twitter_image" target="_blank" href="http://twitter.com">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons social_gplus gplus_image" target="_blank" href="http://gplus.com">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons social_linkedin linkedin_image" target="_blank" href="http://linkedin.com">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons social_vimeo vimeo_image" target="_blank" href="http://vimeo.com">
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+{% endblock %}
