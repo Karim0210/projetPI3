@@ -11,8 +11,9 @@ class RendezVousController extends Controller
     {
         $em=$this->getDoctrine()->getManager();
         $rendezVous=$em->getRepository(RendezVous::class)->findAll();
+        $nb = count($rendezVous);
         return $this->render('gestionsanteBundle:RendezVous:list_rendez_vous.html.twig', array(
-            'rdvs'=>$rendezVous
+            'rdvs'=>$rendezVous, 'nb'=>$nb
         ));
     }
 

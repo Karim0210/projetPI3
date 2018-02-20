@@ -33,6 +33,73 @@
                                     <div class="columnsWrap sc_columns sc_columns_count_3 margin_top_middle margin_bottom_middle">
                                         <div class="columns2_3 sc_column_item sc_column_item_1 odd first span_2">
                                             <div class="sc_contact_form sc_contact_form_contact contact_form_1">
+                                                <div class="" id="jetons">
+                                                    <div class="sc_infobox sc_infobox_style_error sc_infobox_closeable inited">
+                                                        <h4>Calcul des jetons....</h4>
+                                                        <p>Vous avez dépassé 5 min avec le pediatre. Vous devez payer 50jetons.</p>
+                                                    </div>
+                                                </div>
+
+
+                                                <script language="JavaScript">
+                                                    function t()
+                                                    {   var jetons = 100;
+                                                        var compteur=document.getElementById('compteur');
+                                                        s=duree;
+                                                        m=0;h=0;
+                                                        document.getElementById('jetons').style.display = "none" ;
+                                                        if((s<598)&&(s>588)){
+                                                            document.getElementById('jetons').style.display = "block" ;
+                                                            ///document.getElementById('jetons').innerText = "jetons -10" ;
+
+                                                            // showKarim();
+                                                        }
+                                                        if(s<0)
+                                                        {
+                                                            compteur.innerHTML="terminé<br />"+"<a href=http://lien1.fr>continuer</a>"
+                                                            document.getElementById('jetons').innerText = "0" ;
+
+                                                        }
+                                                        else
+                                                        {
+                                                            if(s>59)
+                                                            {
+                                                                m=Math.floor(s/60);
+                                                                s=s-m*60
+                                                            }
+                                                            if(m>59)
+                                                            {
+                                                                h=Math.floor(m/60);
+                                                                m=m-h*60
+                                                            }
+                                                            if(s<10)
+                                                            {
+                                                                s="0"+s
+                                                            }
+                                                            if(m<10)
+                                                            {
+                                                                m="0"+m
+                                                            }
+
+                                                            compteur.innerHTML="<h5>"+ h+":"+m+":"+s+"</h5>"+"<b><br /><a href=>Raccrocher</a></b>"
+                                                        }
+                                                        duree=duree-1;
+
+
+                                                        window.setTimeout("t();",999);
+
+                                                    }
+
+                                                   
+
+                                                </script>
+                                                <div id="compteur" class="sc_infobox sc_infobox_style_regular sc_infobox_closeable inited"></div>
+                                                <script language="JavaScript">
+                                                    duree="600";
+                                                    t();
+
+                                                </script>
+
                                                 <h1 class="title">Questions :</h1>
                                                 <form class="contact_1" method="post" name="form">
                                                     <table>
@@ -116,6 +183,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+    </script>
 
 {% endblock %}
 

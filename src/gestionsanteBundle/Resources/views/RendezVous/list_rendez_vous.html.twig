@@ -33,49 +33,18 @@
 
                                         <div id="tribe-events-content-wrapper" class="tribe-clearfix">
                                             <input type="hidden" id="tribe-events-list-hash" value="">
-                                            <!--
-                                             <div id="tribe-events-bar">
-                                                 <form id="tribe-bar-form" class="tribe-clearfix" name="tribe-bar-form" method="post" action="#">
-                                                     <div id="tribe-bar-collapse-toggle">
-                                                         Find Events<span class="tribe-bar-toggle-arrow">
-                                                                     </span>
-                                                     </div>
-                                                     <div id="tribe-bar-views">
-                                                         <div class="tribe-bar-views-inner tribe-clearfix">
-                                                             <h3 class="tribe-events-visuallyhidden">Event Views Navigation</h3>
-                                                             <label>View As</label>
-                                                             <select class="tribe-bar-views-select tribe-no-param" name="tribe-bar-view">
-                                                                 <option value="features-tools-events-calendar.html" data-view="list">List</option>
-                                                                 <option selected value="features-tools-events-calendar-month.html" data-view="month">Month</option>
-                                                                 <option value="features-tools-events-calendar-today.html" data-view="day">Day</option>
-                                                             </select>
-                                                         </div>
-                                                     </div>
-                                                     <div class="tribe-bar-filters">
-                                                         <div class="tribe-bar-filters-inner tribe-clearfix">
-                                                             <div class="tribe-bar-date-filter">
-                                                                 <label class="label-tribe-bar-date" for="tribe-bar-date">Events From</label>
-                                                                 <input type="text" name="tribe-bar-date" id="tribe-bar-date" value="" placeholder="Date">
-                                                                 <input type="hidden" name="tribe-bar-date-day" id="tribe-bar-date-day" class="tribe-no-param" value="">
-                                                             </div>
-                                                             <div class="tribe-bar-search-filter">
-                                                                 <label class="label-tribe-bar-search" for="tribe-bar-search">Search</label>
-                                                                 <input type="text" name="tribe-bar-search" id="tribe-bar-search" value="" placeholder="Search">
-                                                             </div>
-                                                             <div class="tribe-bar-submit">
-                                                                 <input class="tribe-events-button tribe-no-param" type="submit" name="submit-bar" value="Find Events"/>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                 </form>
-                                             </div>-->
+
                                             <div id="tribe-events-content" class="tribe-events-month">
                                                 <h2 class="tribe-events-page-title">
                                                     Vos Rendez-vous de la semaine de Fevrier 2018
                                                 </h2>
                                                 <div class="tribe-events-notices">
                                                     <ul>
+                                                        {% if nb %}
+                                                        <li>Vos rendez-vous de la semaine: {{ nb }}</li>
+                                                        {% else %}
                                                             <li>Aucun resultat trouvé.</li>
+                                                        {% endif %}
                                                     </ul>
                                                 </div>
                                                 <div id="tribe-events-header" data-title="Events for November 2015 | Party | Event Categories | The Lucky Pint – Irish tavern" data-view="month" data-date="2015-11" data-baseurl="#">
@@ -117,12 +86,12 @@
 
                                                                 {% for rdv in rdvs %}
                                                                     {% if rdv.dateRendezVous|date("d") ==  i%}
-                                                                        <a href="{{ path('rdv', { 'id':rdv.id }) }}">
-                                                                            <b>Nom du client :</b>  {{ rdv.id }}<br>
-                                                                        </a>
+                                                                        <a href="">
+                                                                      <b>Nom:</b>{{ rdv.idPediatre }}<br>
+                                                                        <b>Prenom</b>
                                                                     {% endif %}
                                                                 {% endfor %}
-
+                                                                        </a>
                                                             </div>
                                                             {% endfor %}
                                                     </tr>

@@ -43,6 +43,7 @@
     margin-top: 50px;
 ">
                                             <h1 class="sc_title sc_title_regular">{{ pediatres.nom }} {{ pediatres.prenom }}</h1>
+
                                             <div class="">
                                                 <div class="footer_contacts">
                                                     <span class="sc_icon icon-home theme_accent"></span>
@@ -50,7 +51,38 @@
                                                     <span class="sc_icon icon-email theme_accent"></span>
                                                     {{ pediatres.email }}<br>
                                                     <span class="sc_icon icon-phone theme_accent"></span>
-                                                    +1 (44) 123-45-67
+                                                    +1 (44) 123-45-67<br>
+                                                    <ul>
+                                                    <li class="squareButton light ico likeButton like" data-postid="806" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                        <a class="icon-heart-1" title="Like - 0" onclick="signaler()">
+                                                            <span class="likePost" id="test">{{ pediatres.likes }}</span>
+                                                        </a>
+                                                    </li>
+                                                    </ul>
+                                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                                                    <script>
+                                                        var signaler = (function() {
+                                                            var executed = false;
+
+                                                            return function() {
+                                                                if(!executed){
+                                                                    executed = true;
+                                                                    // var hell = document.getElementById('newDescc').value;
+                                                                    var urlEdit = "{{ path('LikePediatre', { 'id': pediatres.id }) }}"
+                                                                    $.ajax({
+                                                                        method: 'POST',
+                                                                        url: urlEdit,
+
+                                                                        ifModified:true,
+                                                                        success: function(){
+                                                                            document.getElementById('test').innerText = "+1";                                                                  console.log("ggg");
+                                                                        }
+                                                                    });
+                                                                    // setTimeout(check_demande, 5000);
+                                                                }
+                                                            };})();
+                                                    </script>
+
                                                 </div>
                                             </div>
                                         </div>
