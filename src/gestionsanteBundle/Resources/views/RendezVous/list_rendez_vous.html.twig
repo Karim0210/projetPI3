@@ -87,8 +87,8 @@
                                                                 {% for rdv in rdvs %}
                                                                     {% if rdv.dateRendezVous|date("d") ==  i%}
                                                                         <a href="">
-                                                                      <b>Nom:</b>{{ rdv.idPediatre }}<br>
-                                                                        <b>Prenom</b>
+                                                                      <b>Nom:</b>{{ rdv.nom }}<br>
+                                                                        <b>Prenom</b>{{ rdv.prenom }}<br>
                                                                     {% endif %}
                                                                 {% endfor %}
                                                                         </a>

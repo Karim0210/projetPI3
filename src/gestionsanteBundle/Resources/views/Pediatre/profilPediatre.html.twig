@@ -54,10 +54,15 @@
                                                     +1 (44) 123-45-67<br>
                                                     <ul>
                                                     <li class="squareButton light ico likeButton like" data-postid="806" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
-                                                        <a class="icon-heart-1" title="Like - 0" onclick="signaler()">
-                                                            <span class="likePost" id="test">{{ pediatres.likes }}</span>
+                                                        <a class="icon-heart-1 sc_icon  theme_accent" title="Like - 0" onclick="signaler()">
+                                                            <span class="likePost sc_icon  theme_accent" id="test">{{ pediatres.likes }}</span>
                                                         </a>
                                                     </li>
+                                                        <li class="squareButton light ico likeButton like" data-postid="806" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                            <a class="icon-pencil sc_icon  theme_accent" href="{{ path('ajouter_rendez_vous') }}" >
+                                                                <span class="sc_icon  theme_accent" id="test">Rendez-vous</span>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
                                                     <script>

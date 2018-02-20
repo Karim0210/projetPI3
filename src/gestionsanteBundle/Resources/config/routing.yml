@@ -62,3 +62,7 @@ afficher_tutoriel:
 list_rendez_vous:
     path:     /listRendezVous
     defaults: { _controller: gestionsanteBundle:RendezVous:listRendezVous }
+
+ajouter_rendez_vous:
+    path:     /ajouterRendezVous
+    defaults: { _controller: gestionsanteBundle:RendezVous:ajouterRendezVous }

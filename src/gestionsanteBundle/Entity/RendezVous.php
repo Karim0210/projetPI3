@@ -42,6 +42,20 @@ class RendezVous
      */
     private $dateRendezVous;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string")
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string")
+     */
+    private $prenom;
+
 
     /**
      * Get id
@@ -124,5 +138,39 @@ class RendezVous
     {
         return $this->dateRendezVous;
     }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+
 }
 

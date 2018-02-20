@@ -1,0 +1,63 @@
+{% extends 'gestionsanteBundle::layout.html.twig' %}
+{% block content %}
+
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="{{  path('gestionsante_homepage')}}">Accueil</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="{{  path('listePediatre')}}">Listes des pédiatres</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Rendez vous</span>
+            </div>
+            <h3 class="pageTitle h3">Prendre rendez-vous</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+                <section class="post no_margin post_format_standard postAlter page type-page">
+                    <article class="post_content">
+                        <div class="post_text_area">
+
+                            <form class="contact_1" method="post">
+                            <section class="no_padding">
+                                <div class="container">
+                                    <div class="tribe-bar-filters">
+                                        <div class="tribe-bar-filters-inner tribe-clearfix">
+                                            <div class="tribe-bar-date-filter">
+                                                <label class="required" for="contact_form_username">Date Rendez_vous</label>
+                                                <input type="text" name="date" id="tribe-bar-date" value="" placeholder="Date">
+                                                <input type="hidden" name="tribe-bar-date-day" id="tribe-bar-date-day" class="tribe-no-param" value="">
+                                            </div>
+                                            <div class="tribe-bar-search-filter">
+                                                <label class="required" for="contact_form_username">Nom</label>
+                                                <input type="text" name="nom"   placeholder="Nom">
+                                            </div>
+                                            <div class="tribe-bar-search-filter">
+                                                <label class="required" for="contact_form_username">Prenom</label>
+                                                <input type="text" name="prenom"   placeholder="Prenom">
+                                            </div>
+                                            <div class="tribe-bar-submit">
+                                                <input class="tribe-events-button tribe-no-param" type="submit" name="submit-bar" value="Valider"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            </form>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
