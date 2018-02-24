@@ -1,0 +1,43 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<head>
+    <link rel="stylesheet" href="{{ asset('public2/node_modules/mdi/css/materialdesignicons.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('public2/node_modules/simple-line-icons/css/simple-line-icons.css')}}" />
+    <link rel="stylesheet" href="{{ asset('public2/css/style.css')}}" />
+    <link rel="shortcut icon" href="{{ asset('public2/images/favicon.png')}}" />
+</head>
+<body>
+
+<body>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center auth login-full-bg">
+            <div class="row w-100">
+                <div class="col-lg-4 mx-auto">
+                    <div class="auth-form-dark text-left p-5">
+                        <h3 class="card-title text-left mb-3">Register</h3>
+                        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': ''}}) }}
+                        {{ form_widget(form) }}
+
+                        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                        {{ form_end(form) }}
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="{{ asset('public2/node_modules/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{ asset('public2/node_modules/popper.js/dist/umd/popper.min.js')}}"></script>
+<script src="{{ asset('public2/node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('public2/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{ asset('public2/js/misc.js')}}"></script>
+</body>
+
+
+
+
