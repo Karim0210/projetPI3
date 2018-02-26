@@ -1,0 +1,182 @@
+{% extends "EducationBundle::layout.html.twig" %}
+
+
+{% block francias %}
+    <title>Cours de français</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/vendor/html5.js') }}" type="text/javascript"> </script>
+    <![endif]-->
+    <link rel='stylesheet' href="{{ asset('css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/fontello.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/animation.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/style.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/shortcodes.css') }}" type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('css/responsive.css') }}" type='text/css' media='all'/>
+
+    <link rel="stylesheet" href="{{ asset('dashboard/node_modules/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard/node_modules/simple-line-icons/css/simple-line-icons.css') }}">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{ asset('dashboard/images/favicon.png') }}" />
+
+    <!--<link rel='stylesheet' href='custom_tools/css/customizer.css' type='text/css' media='all'/>-->
+{% endblock %}
+
+{% block content %}
+
+    <body class="single single-post single-format-standard themerex_body wide top_panel_above theme_skin_kidscare">
+    <!--[if lt IE 9]>
+    <div class="sc_infobox sc_infobox_style_error">
+        <div style="text-align:center;">It looks like you're using an old version of Internet Explorer. For the best experience, please <a href="http://microsoft.com" style="color:#191919">update your browser</a> or learn how to <a href="http://browsehappy.com" style="color:#222222">browse happy</a>!</div>
+    </div>	<![endif]-->
+    <div class="main_content">
+        <div class="boxedWrap">
+
+
+
+
+            <div id="topOfPage" class="topTabsWrap">
+                <div class="main">
+                    <div class="speedBar">
+                        <a class="home" href="index.html">Home</a>
+                        <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                        <a class="all" href="#">All Posts</a>
+                        <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                        <span class="current"></span>
+                    </div>
+                    <h3 class="pageTitle h3"></h3>
+                </div>
+            </div>
+
+            <div class="mainWrap with_sidebar sideBarLeft">
+                <div class="main">
+                    <div class="content">
+                        <section class="post post_format_standard postAlter page type-page">
+                            <article class="post_content">
+                                <div class="post_text_area">
+
+                                    <section class="no_padding">
+                                        <div class="container">
+
+                                            <div class="sc_section sc_alignright columns1_2 margin_bottom_small">
+                                                <div class="sc_table sc_table_style_2 sc_table_size_big">
+                                                    <table>
+                                                        <tr>
+                                                            <th>Age de destination</th>
+                                                            <th>Nombre de parties</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>{{ cours.getAge() }}</td>
+                                                            <td>{{ cours.getNbre() }}</td>
+                                                        </tr>
+
+
+                                                    </table>
+                                                </div>
+
+
+                                            </div>
+                                            <h1 class="post_title entry-title"></h1>
+                                            <div class="post_text_area">
+                                                <h1>français facile</h1>
+
+                                            </div>
+                                            <div class="sc_section sc_alignleft columns1_2 margin_bottom_small">
+                                                <img src="{{ asset('images/'~cours.getImage()) }}"/>
+
+                                            </div>
+
+                                            <div class="post_text_area">
+
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-star-1" title="Rating - 90.3" href="#">Rating: {{ cours.getRating() }}</a>
+                                                </li>
+
+
+                                            </div>
+                                            </div>
+
+                                            <div class="sc_table sc_table_style_2 sc_table_size_big sc_table_align_center">
+                                                <div class="sc_table sc_table_style_2 sc_table_size_big sc_table_align_center">
+
+                                                </div>
+                                            </div>
+
+                                        <div>
+
+
+
+                                            <div class="tagsWrap"> </div>
+                                        </div>
+
+                                </div>
+                                <div class="post_text_area">
+                                    <h1>Voir le Cours</h1>
+
+                                </div>
+                        </section>
+
+
+                    </div>
+                    </article>
+                    </section>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="upToScrollWrapper">
+            <div class="upToScroll">
+                <a href="#" class="scrollToTop" title="Back to top">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+    <script type='text/javascript' src={{ asset('js/vendor/jquery-1.11.3.min.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/vendor/jquery-migrate.min.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/vendor/__packed.js') }}></script>
+    <!--<script type='text/javascript' src={{ asset('js/vendor/SmoothScroll.min.js') }}></script>-->
+    <script type='text/javascript' src={{ asset('js/vendor/hover/jquery.hoverdir.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/vendor/hover/hoverIntent.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/shortcodes_init.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/_utils.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/_front.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/__main.js') }}></script>
+    <script src="{{ asset('dashboard/node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('dashboard/node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('dashboard/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="{{ asset('dashboard/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('dashboard/js/misc.js') }}"></script>
+
+    <!--<script type='text/javascript' src='custom_tools/js/_customizer.js'></script>-->
+
+    </body>
+{% endblock %}

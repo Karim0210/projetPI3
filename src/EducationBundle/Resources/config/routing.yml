@@ -1,0 +1,155 @@
+education_homepage:
+    path:     /homepage
+    defaults: { _controller: EducationBundle:Default:index }
+
+synopsisconte:
+    path:     /synopsis
+    defaults: { _controller: EducationBundle:Default:Synopsis }
+
+ang:
+    path:     /liste_cours_ang
+    defaults: { _controller: EducationBundle:Default:Liste_Coursang }
+
+article:
+    path:     /liste_articles_sc
+    defaults: { _controller: EducationBundle:Default:Liste_articles_sc }
+
+lister:
+    path:     /afficher_liste_contes
+    defaults: { _controller: EducationBundle:conte:afficherconte }
+
+cfrancais:
+    path:     /cours_de_francais/{id}
+    defaults: { _controller: EducationBundle:Cours:coursfr }
+
+fran:
+    path:     /liste_cours_fr
+    defaults: { _controller: EducationBundle:Cours:afficherlistecours }
+
+ajoutCours:
+    path:     /ajouter_cours
+    defaults: { _controller: EducationBundle:Cours:Ajoutercours }
+
+affichercours:
+    path:     /afficher_cours
+    defaults: { _controller: EducationBundle:Cours:Affichercours }
+
+deletecours:
+    path:     /supprimer_cours/{id}
+    defaults: { _controller: EducationBundle:Cours:supprimercours }
+
+updatecours:
+    path:     /modifier/{id}
+    defaults: { _controller: EducationBundle:Cours:UpdateCours }
+
+ajoutgarderie:
+    path:     /ajouter_garderie
+    defaults: { _controller: EducationBundle:Garderie:ajoutergarderie }
+
+supprimergarderie:
+    path:     /supprimer_garderie/{id}
+    defaults: { _controller: EducationBundle:Garderie:Supprimergarderie }
+
+updategarderie:
+    path:     /update_garderie/{id}
+    defaults: { _controller: EducationBundle:Garderie:Updategarderie }
+
+ajouterconte:
+    path:     /ajouter_conte
+    defaults: { _controller: EducationBundle:conte:Ajouterconte }
+
+afficherlescontes:
+    path:     /afficher_tab_contes
+    defaults: { _controller: EducationBundle:conte:afficherconte }
+
+supprimerconte:
+    path:     /supprimer_conte/{id}
+    defaults: { _controller: EducationBundle:conte:supprimerconte }
+
+updateconte:
+    path:     /update/{id}
+    defaults: { _controller: EducationBundle:conte:Updateconte }
+
+afficherlistedescontes:
+    path:     /voir_liste_contes
+    defaults: { _controller: EducationBundle:conte:afficherlisteconte }
+
+
+gard:
+    path:     /liste_garderie
+    defaults: { _controller: EducationBundle:Garderie:Afficherlistegarderies }
+
+price:
+    path:     /calcul_montant/{id}
+    defaults: { _controller: EducationBundle:Garderie:Afficherlistegarderies }
+
+garderie:
+    path:     /garderie/{id}
+    defaults: { _controller: EducationBundle:Garderie:afficherunegarderie }
+
+affichergarderie:
+    path:     /afficher_garderie
+    defaults: { _controller: EducationBundle:Garderie:affichergarderie }
+
+ajoutertest:
+    path:     /ajout_test
+    defaults: { _controller: EducationBundle:Test:ajouterTest }
+
+supprimertest:
+    path:     /supprimer_test/{id}
+    defaults: { _controller: EducationBundle:Test:supprimerTest }
+
+modifiertest:
+    path:     /modifier_test/{id}
+    defaults: { _controller: EducationBundle:Test:UpdateTest }
+
+affichertest:
+    path:     /afficher_test
+    defaults: { _controller: EducationBundle:Test:afficherTest }
+
+quizz:
+    path:     /afficher_quizz/{id}
+    defaults: { _controller: EducationBundle:Test:CreateTest }
+
+res:
+    path:     /afficher_res/{id}
+    defaults: { _controller: EducationBundle:Test:ScoreTest }
+
+ajoutjeu:
+    path:     /ajouter_jeu
+    defaults: { _controller: EducationBundle:Jeux:AjouterJeux }
+
+afficherjeu:
+    path:     /afficherjeu
+    defaults: { _controller: EducationBundle:Jeux:afficherjeux }
+
+supprimerjeu:
+    path:     /supprimer_jeu/{id}
+    defaults: { _controller: EducationBundle:Jeux:supprimerJeux }
+
+updatejeu:
+    path:     /update_jeu/{id}
+    defaults: { _controller: EducationBundle:Jeux:Updatejeu }
+
+listejeux:
+    path:     /liste_jeux
+    defaults: { _controller: EducationBundle:Jeux:ShowJeux }
+
+montantgard:
+    path:     /afficher_mont/{id}
+    defaults: { _controller: EducationBundle:Garderie:CalculerPromotion }
+
+download_file:
+    path:     /download{nom}
+    defaults: { _controller: EducationBundle:conte:downloadFile }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+{% extends "EducationBundle::layout.html.twig" %}
+
+
+{% block garderie %}
+    <title>Garderies</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/vendor/html5.js') }}" type="text/javascript"> </script>
+    <![endif]-->
+    <link rel='stylesheet' href="{{ asset('css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/fontello.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/animation.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/style.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/shortcodes.css') }}" type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('css/responsive.css') }}" type='text/css' media='all'/>
+
+
+
+    <!--<link rel='stylesheet' href='custom_tools/css/customizer.css' type='text/css' media='all'/>-->
+{% endblock %}
+
+{% block content %}
+
+    <body class="single single-post single-format-standard themerex_body wide top_panel_above theme_skin_kidscare">
+    <!--[if lt IE 9]>
+    <div class="sc_infobox sc_infobox_style_error">
+        <div style="text-align:center;">It looks like you're using an old version of Internet Explorer. For the best experience, please <a href="http://microsoft.com" style="color:#191919">update your browser</a> or learn how to <a href="http://browsehappy.com" style="color:#222222">browse happy</a>!</div>
+    </div>	<![endif]-->
+    <div class="main_content">
+        <div class="boxedWrap">
+
+
+
+            <div id="topOfPage" class="topTabsWrap">
+                <div class="main">
+                    <div class="speedBar">
+                        <a class="home" href="#">Home</a>
+                        <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+
+                        <span class="current">{{ garderie.getNom() }} </span>
+                    </div>
+                    <h3 class="pageTitle h3">{{ garderie.getNom() }} </h3>
+                </div>
+            </div>
+
+
+            <div class="mainWrap with_sidebar sideBarLeft">
+                <div class="main">
+
+
+                    <div class="content">
+
+
+                        <section class="post post_format_standard postAlter page type-page">
+
+                            <article class="post_content">
+                                <div class="post_text_area">
+
+                                    <section class="no_padding">
+                                        <div class="container">
+
+                                            <div class="sc_section sc_alignright columns1_2 margin_bottom_small">
+                                                <div class="sc_table sc_table_style_2 sc_table_size_big">
+                                                    <table>
+                                                        <tr>
+                                                            <th>Formule</th>
+                                                            <th>Prix</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>{{ garderie.getFormule() }}</td>
+                                                            <td>{{ garderie.getTarif() }}</td>
+                                                        </tr>
+
+
+                                                    </table>
+                                                    {{ form_start(f) }}
+
+                                                        {{ form_start(f) }}
+                                                        {{ form_widget(f.rating) }}
+                                                       {{ form_widget(f.Accepter)}}
+                                                        {{ form_end(f) }}
+
+
+                                                    {{ form_end(f) }}
+
+                                                </div>
+
+
+                                            </div>
+                                            <h1 class="post_title entry-title">{{ garderie.getNom() }}</h1>
+                                            <h3 class="post_title entry-title">Description:<br>{{ garderie.getDescription()}}</h3>
+
+                                            <div class="sc_section sc_alignleft columns1_2 margin_bottom_small">
+                                                <img src="{{ asset('images/'~garderie.getImage()) }}"/>
+
+                                            </div>
+
+                                            <div class="post_text_area">
+
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-star-1" title="Rating - 90.3" href="#">Rating: {{ garderie.getRating() }}</a>
+                                                </li>
+
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-star-1" title="Rating - 90.3" href="#">contacter</a>
+                                                </li>
+
+                                            </div>
+                                            <li>
+
+                                            </li>
+                                           <div>
+                                            <form method="POST" action="">
+
+                                                <div >
+                                                    <h3 class="title">Donner le nombre de vos enfants</h3>
+                                                    <input name="nbre" type="text"  placeholder="Nombre d'enfants"><br>
+                                                </div>
+                                                <div class="squareButton sc_button_size sc_button_style_global global ico">
+                                                    <button type="submit" name="ok" class="">Montant à payer</button>
+                                                </div>
+
+                                            </form>
+
+
+                                           </div>
+                                            <div class="sc_button sc_button_style_dark sc_button_size_huge squareButton dark huge" >
+                                                <a href="#" style="margin-left: 31px">Tarif Original {{ garderie.getTarif() }} dt</a>
+                                            </div>
+                                            <div class="sc_button sc_button_style_dark sc_button_size_huge squareButton dark huge" >
+                                                <a href="#">Nouveau  Montant {{ newtarif }} dt</a>
+                                            </div>
+                                            </div>
+
+                                            </div>
+                                    </section>
+
+
+                                </div>
+
+                    </article>
+                    </section>
+                </div>
+
+
+            </div>
+        </div>
+
+
+       </div>
+
+    </div>
+    </div>
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+    <script type='text/javascript' src={{ asset('js/vendor/jquery-1.11.3.min.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/vendor/jquery-migrate.min.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/vendor/__packed.js') }}></script>
+    <!--<script type='text/javascript' src={{ asset('js/vendor/SmoothScroll.min.js') }}></script>-->
+    <script type='text/javascript' src={{ asset('js/vendor/hover/jquery.hoverdir.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/vendor/hover/hoverIntent.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/shortcodes_init.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/_utils.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/_front.js') }}></script>
+    <script type='text/javascript' src={{ asset('js/custom/__main.js') }}></script>
+
+    <!--<script type='text/javascript' src='custom_tools/js/_customizer.js'></script>-->
+
+    </body>
+{% endblock %}

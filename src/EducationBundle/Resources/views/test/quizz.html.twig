@@ -1,0 +1,139 @@
+{% extends "EducationBundle::layout.html.twig" %}
+
+{% block quizz %}
+{% endblock %}
+
+
+{% block content %}
+
+    <title xmlns="http://www.w3.org/1999/html">quizz</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/vendor/html5.js') }}" type="text/javascript"> </script>
+    <![endif]-->
+    <link rel='stylesheet' href="{{ asset('css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/fontello.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/animation.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/style.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/shortcodes.css') }}" type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('css/responsive.css') }}" type='text/css' media='all'/>
+
+    <!--<link rel='stylesheet' href='custom_tools/css/customizer.css' type='text/css' media='all'/>-->
+
+    </head>
+
+    <body class="page page-template-default themerex_body wide top_panel_above theme_skin_kidscare">
+    <!--[if lt IE 9]>
+    <div class="sc_infobox sc_infobox_style_error">
+        <div style="text-align:center;">It looks like you're using an old version of Internet Explorer. For the best experience, please <a href="http://microsoft.com" style="color:#191919">update your browser</a> or learn how to <a href="http://browsehappy.com" style="color:#222222">browse happy</a>!</div>
+    </div>	<![endif]-->
+    <div class="main_content">
+        <div class="boxedWrap">
+
+
+
+            <div id="topOfPage" class="topTabsWrap">
+                <div class="main">
+
+                    <h3 class="pageTitle h3">Quizz </h3>
+                </div>
+            </div>
+
+            <div class="mainWrap without_sidebar">
+                <div class="main">
+                    <div class="content">
+                        <section class="post post_format_standard postAlter page type-page">
+                            <article class="post_content">
+                                <div class="post_text_area">
+
+                                    <section class="no_padding">
+                                        <div class="container">
+
+                                            <div class="columnsWrap sc_columns sc_columns_count_3">
+                                                <div class="columns2_3 sc_column_item sc_column_item_1 odd first span_2">
+
+                                                    <form method="POST" action="">
+
+                                                        {% for test in test %}
+                                                            <fieldset id={{ test.id }}>
+                                                                <h3 class="media-heading"> {{ test.question }}</h3>
+
+                                                                <br>
+                                                                <h4> <input type="radio" name={{ test.id }} value={{ test.prop1 }} /> {{ test.prop1 }}</h4><br>
+                                                                <h4> <input type="radio" name={{ test.id }} value={{ test.prop2 }} /> {{ test.prop2 }}</h4><br>
+                                                                <h4> <input type="radio" name={{ test.id }} value={{ test.prop3 }} /> {{ test.prop3 }}</h4><br>
+                                                            </fieldset>
+                                                        {% endfor %}
+                                                        <div class="sc_section sc_alignright columns2_3 custom_button_columns margin_bottom_middle">
+                                                            <div class="sc_button sc_button_style_light sc_button_size_medium squareButton light medium">
+                                                                <button type="submit" class="sc_button sc_button_style_dark sc_button_size_medium squareButton dark medium" >Submit</button>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <h2 class="sc_title sc_title_regular">Votre Score :  </h2>
+                                                        <input type="text" class="form-control" id="exampleInputEmail3" value="{{ res }}" readonly>
+                                                        <input type="text" class="form-control" id="exampleInputEmail3" value="{{ niveau }}" readonly>
+                                                   </form>
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </article>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footerContentWrap">
+
+
+                <div class="upToScrollWrapper">
+                    <div class="upToScroll">
+                        <a href="#" class="scrollToTop" title="Back to top">
+                        </a>
+                    </div>
+                </div>
+                <div class="copyWrap">
+                    <div class="copy main">
+
+                        <div class="copy_socials socPage">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-1.11.3.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-migrate.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/__packed.js') }}"></script>
+    <!--<script type='text/javascript' src="{{ asset('js/vendor/SmoothScroll.min.js') }}"></script>-->
+    <script type='text/javascript' src="{{ asset('js/custom/shortcodes_init.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_utils.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_front.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/__main.js') }}"></script>
+    <!--<script type='text/javascript' src="{{ asset('custom_tools/js/_customizer.js') }}'></script>-->
+
+    </body>
+{% endblock %}

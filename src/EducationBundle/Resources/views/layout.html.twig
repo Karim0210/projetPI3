@@ -1,0 +1,420 @@
+<html lang="en-US">
+<head>
+   {% block head %}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Gestion Education</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <!--[if lt IE 9]>
+    <script src="js/vendor/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <link rel='stylesheet' href="{{ asset('css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/fontello.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/animation.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/style.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/shortcodes.css') }}" type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('css/responsive.css') }}" type='text/css' media='all'/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <script src="{{ asset('jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+    <!--<link rel='stylesheet' href='custom_tools/css/customizer.css' type='text/css' media='all'/>-->
+
+
+</head>
+{% endblock %}
+
+{% block header %}
+<header class="noFixMenu menu_right without_user_menu">
+    <div class="topWrapFixed"></div>
+    <div class="topWrap">
+        <div class="mainmenu_area">
+            <div class="main with_logo_left">
+                <div class="logo logo_left">
+                    <a href="index.html" >
+                        <img src="{{ asset('images/152x34.png') }}" class="logo_main" alt="">
+                        <img src="{{ asset('images/152x34.png') }}" class="logo_fixed" alt="">
+                        <span class="logo_slogan"></span>
+                    </a>
+                </div>
+                <div class="search" title="Open/close search form">
+                    <div class="searchForm">
+                        <form method="get" class="search-form" action="#">
+                            <button type="submit" class="searchSubmit" title="Start search">
+                                <span class="icoSearch"></span>
+                            </button>
+                            <input type="text" class="searchField" placeholder="Search &hellip;" value="" name="s" title="Search for:"/>
+                        </form>
+                    </div>
+                    <div class="ajaxSearchResults"></div>
+                </div>
+                <a href="#" class="openResponsiveMenu">Menu</a>
+                <nav role="navigation" class="menuTopWrap topMenuStyleLine">
+                    <ul id="mainmenu" class="">
+
+                        <li class="menu-item menu-item-has-children">
+                            <a href="index.html">Activities</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="club.html">Club</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="parc.html">Parc</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="headers-central-menu.html">Evenement</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="headers-video.html">Les Evenements de la Semaine</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-has-children columns custom_view_item">
+                            <a title="Tools and Pages" href="{{ path('education_homepage') }}">
+                                <span class="menu_icon icon-params"> </span>
+                                Learn and Play
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="{{ path('afficherlistedescontes') }}">Lecture de contes</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="">Lire un conte</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="headers-standard.html">Passer un quizz</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+
+                                <li class="menu-item">
+                                    <a href="">Consulter nos cours </a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="{{ path('fran') }}">Cours de Français</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#">Cours d'Anglais</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="">Articles Scientifiques</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+
+
+                                <li class="menu-item">
+                                    <a href="{{ path('listejeux') }}">Jeux Educatifs</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="headers-transparent.html">de 3 à 5 ans</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="headers-transparent.html">de 5 à 7 ans</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="headers-transparent.html">de 7 à 10 ans</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ path('gard') }}">Liste des Garderies</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="headers-video.html"></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item menu-item-has-children">
+                            <a title="Layouts and hovers" href="index4.html">
+                                <span class="menu_icon icon-thumbs-up"></span>
+                                Our Shops
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Classic Style</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="portfolio-classic-1-column.html">1 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-classic-2-columns.html">2 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-classic-2-columns-with-sidebar.html">2 columns with sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-classic-3-columns.html">3 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-classic-3-columns-with-sidebar.html">3 columns with sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-classic-4-columns.html">4 columns</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Masonry style</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="portfolio-masonry-2-columns.html">2 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-masonry-2-columns-with-sidebar.html">2 columns with sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-masonry-3-columns.html">3 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-masonry-3-columns-with-sidebar.html">3 columns with sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-masonry-4-columns.html">4 columns</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Grid Style</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="portfolio-grid-2-columns.html">2 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-grid-2-columns-with-sidebar.html">2 columns with sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-grid-3-columns.html">3 columns</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-grid-3-columns-with-sidebar.html">3 columns with sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-grid-4-columns.html">4 columns</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Portfolio post</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="portfolio-post-standard.html">Standard</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-post-fullscreen.html">Fullscreen</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item menu-item-has-children">
+                            <a title="Posts pages" href="index2.html">
+                                <span class="menu_icon icon-note"></span>
+                                SANTE
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Pédiatres</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="features-tools-post-formats-n-all-widgets.html">With sidebar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="portfolio-blog-classic-without-sidebar.html">Without sidebar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Guide d'Alimentation</a>
+
+                                </li>
+                                <li class="menu-item">
+                                    <a href="blog-timeline.html">Forum</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="blog-tabs.html">Tutoriels</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-item menu-item-has-children">
+                            <a title="Posts pages" href="index.html">
+                                <span class="menu_icon icon-note"></span>
+                                Babysitters
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="ListeBabysitters.html">Babysitters Near you </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Search for a Babysitter </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="blog-timeline.html">Full list</a>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="blog-tabs.html">My Subscriptions</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="">My Payments</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="">My Notifcations (0)</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="">Send Message to My Babysitter</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+<footer class="footerWrap footerStyleLight contactFooterWrap">
+    <div class="main contactFooter">
+        <section>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/245x43.png" alt="">
+                </a>
+            </div>
+            <div class="contactAddress">
+                <address class="addressRight">
+
+                </address>
+                <address class="addressLeft">
+
+                </address>
+            </div>
+            <div class="contactTtextLine"></div>
+            <div class="contactShare">
+                <ul>
+                    <li>
+                        <a class="social_icons fShare facebook_image" href="http://facebook.com" target="_blank" title="facebook">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons fShare pinterest_image" href="http://pinterest.com" target="_blank" title="Pinterest">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons fShare twitter_image" href="http://twitter.com" target="_blank" title="twitter">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons fShare gplus_image" href="http://gplus.com" target="_blank" title="gplus">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons fShare linkedin_image" href="http://linkedin.com" target="_blank" title="Linkedin">
+                            <span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social_icons fShare vimeo_image" href="http://vimeo.com" target="_blank" title="Vimeo">
+                            <span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</footer>
+
+
+<div class="copyWrap">
+    <div class="copy main">
+        <div class="copyright">
+            <a href="http://themeforest.net/user/axiomthemes/portfolio"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+        <div class="copy_socials socPage">
+            <ul>
+                <li>
+                    <a class="social_icons social_facebook facebook_image" target="_blank" href="http://facebook.com">
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social_icons social_pinterest pinterest_image" target="_blank" href="http://pinterest.com">
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social_icons social_twitter twitter_image" target="_blank" href="http://twitter.com">
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social_icons social_gplus gplus_image" target="_blank" href="http://gplus.com">
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social_icons social_linkedin linkedin_image" target="_blank" href="http://linkedin.com">
+                        <span></span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social_icons social_vimeo vimeo_image" target="_blank" href="http://vimeo.com">
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="upToScroll">
+    <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+    <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+</div>
+
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-1.11.3.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-migrate.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/__packed.js') }}"></script>
+    <!--<script type='text/javascript' src="{{ asset('js/vendor/SmoothScroll.min.js') }}"></script>-->
+    <script type='text/javascript' src="{{ asset('js/custom/shortcodes_init.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_utils.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_front.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/__main.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/diagram/diagram.raphael.min.js') }}"></script>
+
+    <!--<script type='text/javascript' src='custom_tools/js/_customizer.js'></script>-->
+
+{% endblock %}
+</html>

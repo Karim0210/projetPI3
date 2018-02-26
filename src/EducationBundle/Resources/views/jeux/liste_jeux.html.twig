@@ -1,0 +1,303 @@
+{% extends "EducationBundle::layout.html.twig" %}
+{% block jeux %}
+
+    <title>Liste des Jeux</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/vendor/html5.js') }}" type="text/javascript"></script>
+    <![endif]-->
+    <link rel='stylesheet' href="{{ asset('css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/fontello.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/animation.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/style.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/shortcodes.css') }}" type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('css/responsive.css') }}" type='text/css' media='all'/>
+
+    <!--<link rel='stylesheet' href="{{ asset('custom_tools/css/customizer.css') }}" type='text/css' media='all'/>-->
+{% endblock %}
+
+{% block content %}
+
+    <body class="archive category category-post-formats themerex_body wide top_panel_above theme_skin_kidscare">
+    <!--[if lt IE 9]>
+    <div class="sc_infobox sc_infobox_style_error">
+        <div style="text-align:center;">It looks like you're using an old version of Internet Explorer. For the best experience, please <a href="http://microsoft.com" style="color:#191919">update your browser</a> or learn how to <a href="http://browsehappy.com" style="color:#222222">browse happy</a>!</div>
+    </div>	<![endif]-->
+    <div class="main_content">
+        <div class="boxedWrap">
+
+
+
+            <div class="widgetTabs">
+                <div id="topOfPage" class="topTabsWrap">
+                    <div class="main">
+
+                        <h3 class="pageTitle h3">Nos Jeux</h3>
+                        <div class="tabsButton">
+                            <ul class="" role="tablist">
+                                <li class="" role="tab">
+                                    <a href="#tabBlog">
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mainWrap without_sidebar">
+                    <div class="main">
+                        <div class="content">
+
+                            <aside id="tabBlog" class="blogContent">
+
+                                <section class="post post_format_standard postAlter hrShadow no_padding">
+                                    <div class="container">
+                                        <article class="post_content">
+
+                                            <h1 class="post_title entry-title">Nos Jeux</h1>
+
+
+                                        </article>
+                                    </div>
+                                </section>
+
+
+
+                                <section class="relatedWrap no_padding hrShadow">
+                                    <div class="container">
+                                        <div class="relatedPostWrap">
+                                            <div class="columnsWrap">
+                                               {% for jeu in jeu %}
+                                                <article class="columns1_2 column_item_1">
+                                                    <div class="sc_slider sc_slider_swiper swiper-slider-container sc_slider_controls" data-old-width="714" data-old-height="402" data-interval="8400">
+                                                        <iframe src=  "https://www.silvergames.com/fr/doodle-jump/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe>
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#" data-value="">{{ jeu.getTitre() }}</a>
+                                                    </h4>
+
+                                                    <p>{{ jeu.getInstructions() }}</p>
+                                                    <div class="relatedInfo">
+                                                        Ce Jeu est déstiné aux enfants de {{ jeu.getAge() }} Ans
+                                                        <span class="separator">|</span>
+                                                        <span class="infoTags">
+															<a class="tag_link" href="#">{{ jeu.getCategories() }}</a>
+														</span>
+                                                    </div>
+                                                    <div class="relatedMore">
+                                                        <ul>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-link" title="More" href="#">More</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-eye" title="Views - 122" href="#">122</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </article>
+
+                                                <article class="columns1_2 column_item_2">
+                                                    <div class="sc_slider sc_slider_swiper swiper-slider-container sc_slider_controls" data-old-width="714" data-old-height="402" data-interval="9359">
+
+
+                                                        <iframe src="https://www.silvergames.com/fr/bubble-shooter/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe>
+
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">{{ jeu.getTitre() }}</a>
+                                                    </h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...</p>
+                                                    <div class="relatedInfo">
+                                                        Posted <a href="#" class="post_date">July 16, 2014</a>
+                                                        <span class="separator">|</span>
+                                                        <span class="infoTags">
+															<a class="tag_link" href="#">post formats,</a>
+															<a class="tag_link" href="#">gallery</a>
+														</span>
+                                                    </div>
+                                                    <div class="relatedMore">
+                                                        <ul>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-link" title="More" href="#">More</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-eye" title="Views - 100" href="#">100</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-comment-1" title="Comments - 1" href="#">1</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </article>
+                                                <article class="columns1_2 column_item_2">
+                                                    <div class="sc_slider sc_slider_swiper swiper-slider-container sc_slider_controls" data-old-width="714" data-old-height="402" data-interval="9359">
+
+                                                        <iframe src="https://www.silvergames.com/fr/little-farm-clicker/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe>
+
+
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">{{ jeu.getTitre() }}</a>
+                                                    </h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...</p>
+                                                    <div class="relatedInfo">
+                                                        Posted <a href="#" class="post_date">July 16, 2014</a>
+                                                        <span class="separator">|</span>
+                                                        <span class="infoTags">
+															<a class="tag_link" href="#">post formats,</a>
+															<a class="tag_link" href="#">gallery</a>
+														</span>
+                                                    </div>
+                                                    <div class="relatedMore">
+                                                        <ul>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-link" title="More" href="#">More</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-eye" title="Views - 100" href="#">100</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-comment-1" title="Comments - 1" href="#">1</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </article>
+                                                <article class="columns1_2 column_item_2">
+                                                    <div class="sc_slider sc_slider_swiper swiper-slider-container sc_slider_controls" data-old-width="714" data-old-height="402" data-interval="9359">
+
+
+                                                        <iframe src="https://www.silvergames.com/fr/goodgame-empire/iframe" width="480" height="300" style="margin:0;padding:0;border:0"></iframe>
+
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">{{ jeu.getTitre() }}</a>
+                                                    </h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...</p>
+                                                    <div class="relatedInfo">
+                                                        Posted <a href="#" class="post_date">July 16, 2014</a>
+                                                        <span class="separator">|</span>
+                                                        <span class="infoTags">
+															<a class="tag_link" href="#">post formats,</a>
+															<a class="tag_link" href="#">gallery</a>
+														</span>
+                                                    </div>
+                                                    <div class="relatedMore">
+                                                        <ul>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-link" title="More" href="#">More</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-eye" title="Views - 100" href="#">100</a>
+                                                            </li>
+                                                            <li class="squareButton light ico">
+                                                                <a class="icon-comment-1" title="Comments - 1" href="#">1</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </article>
+                                               {% endfor %}
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="no_padding formValid">
+                                    <div class="container">
+                                        <h2>Ajouter Un Commentaire</h2>
+                                        <div class="commForm commentsForm">
+                                            <div id="respond" class="comment-respond">
+                                                <h3 id="reply-title" class="comment-reply-title">
+                                                    <small>
+                                                        <a rel="nofollow" id="cancel-comment-reply-link" href="#respond">Cancel reply</a>
+                                                    </small>
+                                                </h3>
+                                            </div>
+                                            <div class="nav_comments"></div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </aside>
+
+
+
+
+
+
+
+
+                            <aside id="ag_cloud-3" class="widgetTop clr widget widget_tag_cloud">
+                                <h3 class="titleHide title">Tags</h3>
+                                <div class="tagcloud">
+                                    <a href='#' title='1 topic'>aside post</a>
+                                    <a href='#' title='1 topic'>audio post</a>
+                                    <a href='#' title='3 topics'>business</a>
+                                    <a href='#' title='1 topic'>chat post</a>
+                                    <a href='#' title='1 topic'>clear</a>
+                                    <a href='#' title='4 topics'>creative</a>
+                                    <a href='#' title='4 topics'>design</a>
+                                    <a href='#' title='1 topic'>events</a>
+                                    <a href='#' title='2 topics'>health</a>
+                                    <a href='#' title='4 topics'>holidays</a>
+                                    <a href='#' title='16 topics'>kidscare</a>
+                                    <a href='#' title='1 topic'>link post</a>
+                                    <a href='#' title='1 topic'>music</a>
+                                    <a href='#' title='6 topics'>nature</a>
+                                    <a href='#' title='12 topics'>post formats</a>
+                                    <a href='#' title='6 topics'>posts slider</a>
+                                    <a href='#' title='1 topic'>print</a>
+                                    <a href='#' title='1 topic'>quote post</a>
+                                    <a href='#' title='31 topics'>shortcodes</a>
+                                    <a href='#' title='1 topic'>status post</a>
+                                    <a href='#' title='2 topics'>toys</a>
+                                    <a href='#' title='2 topics'>typography</a>
+                                    <a href='#' title='1 topic'>video post</a>
+                                    <a href='#' title='3 topics'>gallery</a>
+                                </div>
+                            </aside>
+                            <aside id="text-6" class="widgetTop clr widget widget_text">
+                                <h3 class="titleHide title">Custom text</h3>
+                                <div class="textwidget">
+                                </div>
+                            </aside>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-1.11.3.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-migrate.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/__packed.js') }}"></script>
+    <!--<script type='text/javascript' src="{{ asset('js/vendor/SmoothScroll.min.js') }}"></script>-->
+    <script type='text/javascript' src="{{ asset('js/custom/shortcodes_init.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_utils.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_front.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/__main.js') }}"></script>
+
+    <!--<script type='text/javascript' src="{{ asset('custom_tools/js/_customizer.js') }}"></script>-->
+
+    </body>
+{% endblock %}

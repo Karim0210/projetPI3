@@ -1,0 +1,584 @@
+{% extends "EducationBundle::layout.html.twig" %}
+{% block listecoursfr %}
+
+    <title>Liste des cours de français</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}"/>
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/vendor/html5.js') }}" type="text/javascript"> </script>
+    <![endif]-->
+    <link rel='stylesheet' href="{{ asset('css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/fontello.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/fontello/css/animation.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/style.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('css/shortcodes.css') }}" type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('css/responsive.css') }}" type='text/css' media='all'/>
+
+    <!--<link rel='stylesheet' href='custom_tools/css/customizer.css' type='text/css' media='all'/>-->
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="index.html">Home</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="#">All Posts</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Liste des cours de Français</span>
+            </div>
+            <h3 class="pageTitle h3">Liste des cours de Français</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+
+                <section class="no_margin no_padding">
+                    <div class="container">
+                        <div class="masonryWrap">
+                            <section class="masonry isotope" data-columns="2">
+                                {% for cours in cours %}
+                                <article class="isotopeElement post_format_standard even flt_71">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1537.png" data-title="Physical Activity Keeps Kids Healthy">
+                                            <img alt="Physical Activity Keeps Kids Healthy" src="{{ asset('images/'~cours.getImage()) }}">
+                                        </div>
+                                        <h4>
+                                            <a href="{{ path("cfrancais", { "id":cours.id }) }}">Français Facile</a> <p></p>
+                                        </h4>
+                                        <p>
+                                            Pour les enfants agé de {{ cours.getAge() }} ans
+                                        </p>
+
+                                        <div class="masonryMore">
+                                            <ul>
+
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 116" href="#">116</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="952" data-likes="1" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 1" href="#">
+                                                        <span class="likePost">{{ cours.getRating() }}</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                {% endfor %}
+                                <article class="isotopeElement post_format_standard odd flt_64">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="Brain Training Games for Children">
+                                            <img alt="Brain Training Games for Children" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Conjugaison</a>
+                                        </h4>
+                                        <p>
+                                            Aliquam dapibus neque a placerat iaculis. Nulla tellus nisl, tincidunt eu tempor porta, sagittis id neque. Cras nunc diam, vestibulum a pretium...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 68" href="#">68</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="950" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard even flt_71">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="10 Tips For Positive Child Care">
+                                            <img alt="10 Tips For Positive Child Care" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Grammaire</a>
+                                        </h4>
+                                        <p>
+                                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed quis porttitor diam. Phasellus semper venenatis nisl...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 58" href="#">58</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="948" data-likes="1" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 1" href="#">
+                                                        <span class="likePost">1</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard odd flt_66 flt_61">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="Children&#8217;s Growth and Development">
+                                            <img alt="Children&#8217;s Growth and Development" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Citations Françaises</a>
+                                        </h4>
+                                        <p>
+                                            Fusce egestas dolor vitae velit interdum, eget dictum justo varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 51" href="#">51</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="946" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard even flt_64">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="What Should Parents Know About Measles">
+                                            <img alt="What Should Parents Know About Measles" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Histoire</a>
+                                        </h4>
+                                        <p>
+                                            Mauris tincidunt iaculis consectetur. Pellentesque ullamcorper dolor nisi, eget luctus metus dapibus quis. Morbi a nunc a nisi rhoncus interdum...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 269" href="#">269</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="944" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard odd flt_71 flt_66 flt_61">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/1317x2000.png" data-title="Summer Childcare Questions">
+                                            <img alt="Summer Childcare Questions" src="{{ asset('images/714x1086.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Géographie</a>
+                                        </h4>
+                                        <p>
+                                            Proin dictum tellus magna, id semper elit rhoncus a. Nullam gravida lectus vel nunc sagittis consectetur. Cras dictum, elit sit amet imperdiet...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 142" href="#">142</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="954" data-likes="2" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 2" href="#">
+                                                        <span class="likePost">2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard odd flt_64">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="Questions for Potential Pediatricians">
+                                            <img alt="Questions for Potential Pediatricians" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Questions for Potential Pediatricians</a>
+                                        </h4>
+                                        <p>
+                                            Donec lacinia elementum nunc, sed condimentum eros dictum ut. Sed pretium lacinia tortor, ac porta sapien congue sed. Morbi quis nisl dolor...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 351" href="#">351</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="942" data-likes="2" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 2" href="#">
+                                                        <span class="likePost">2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard even flt_64">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/920x1424.png" data-title="When to Call the Doctor">
+                                            <img alt="When to Call the Doctor" src="{{ asset('images/714x1105.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">When to Call the Doctor</a>
+                                        </h4>
+                                        <p>
+                                            Curabitur auctor adipiscing risus sed ornare. Aliquam a auctor augue. Nullam nisl lorem, sodales sed odio ac, auctor accumsan libero. Ut convallis...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 64" href="#">64</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="940" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard odd flt_66">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="Social Skills in Preschool">
+                                            <img alt="Social Skills in Preschool" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Social Skills in Preschool</a>
+                                        </h4>
+                                        <p>
+                                            Vestibulum ut lacus et magna consectetur interdum non eget justo. Nam lorem tortor, viverra ut nibh a, feugiat varius mi. Duis eleifend, nisi...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 37" href="#">37</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="938" data-likes="1" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 1" href="#">
+                                                        <span class="likePost">1</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard even flt_65 flt_69">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="Hiring a Nanny: Holding Interviews">
+                                            <img alt="Hiring a Nanny: Holding Interviews" src="{{ asset('images/714x476.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Hiring a Nanny: Holding Interviews</a>
+                                        </h4>
+                                        <p>
+                                            Maecenas tristique sem ante. Donec imperdiet pretium sodales. Sed in eros fermentum, facilisis magna eu, tempus mauris. Curabitur mollis lacus ac...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 68" href="#">68</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="936" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard odd flt_64">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/1197x1987.png" data-title="Your Kid&#8217;s Emotional Wellness">
+                                            <img alt="Your Kid&#8217;s Emotional Wellness" src="{{ asset('images/714x1185.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Your Kid&#8217;s Emotional Wellness</a>
+                                        </h4>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur augue tortor, faucibus quis velit vitae, mattis ornare metus. Ut erat justo...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 17" href="#">17</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="934" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                                <article class="isotopeElement post_format_standard even last flt_68">
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="images/2000x1333.png" data-title="Daycare, Preschool and Early Learning">
+                                            <img alt="Daycare, Preschool and Early Learning" src="{{ asset('images/714x475.png') }}">
+                                        </div>
+                                        <h4>
+                                            <a href="#">Daycare, Preschool and Early Learning</a>
+                                        </h4>
+                                        <p>
+                                            Ut a neque tellus. Duis facilisis enim quis tortor pharetra dapibus. Phasellus nunc velit, feugiat sed lobortis in, accumsan facilisis turpis...
+                                        </p>
+                                        <div class="masonryInfo">
+                                            Posted
+                                            <a href="#" class="post_date">August 29, 2014</a>
+                                        </div>
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 22" href="#">22</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="932" data-likes="0" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 0" href="#">
+                                                        <span class="likePost">0</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                </article>
+                            </section>
+                        </div>
+
+                        <div id="pagination" class="pagination">
+                            <ul class="pageLibrary">
+                                <li class="pager_pages libPage">
+                                    Page
+                                    <input class="navInput" readonly="readonly" type="text" size="1" value="1"> of 2
+                                    <div id="pageNavSlider" class="boxShadow pageFocusBlock navPadding">
+                                        <div class="sc_slider sc_slider_swiper sc_slider_controls sc_slider_controls_top sc_slider_nopagination sc_slider_noautoplay swiper-slider-container">
+                                            <ul class="slides swiper-wrapper" data-current-slide="1">
+                                                <li class="swiper-slide">
+                                                    <div class="pageNumber">
+                                                        <table>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="#" class="active">1</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">2</a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul class="flex-direction-nav">
+                                            <li>
+                                                <a class="flex-prev" href="#">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="flex-next" href="#">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pager_next ico right squareButton light">
+                                    <a href="#">Next </a>
+                                </li>
+                                <li class="pager_last ico right squareButton light">
+                                    <a href="#">Last </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContentWrap">
+
+        <footer class="footerWrap footerStyleDark">
+            <div class="main footerWidget widget_area">
+                <div class="columnsWrap">
+                    <aside class="columns1_4 widgetWrap widget widget_advert">
+                        <div class="widget_advert_inner">
+                            <figure class="sc_image  sc_image_shape_square">
+                                <img src="images/150x36.png" alt="">
+                            </figure>
+                            <br>
+                            <div class="sc_video_player">
+                                <div class="sc_video_frame sc_video_play_button" data-video="&lt;iframe class=&quot;video_frame&quot; src=&quot;https://youtube.com/embed/636Dp8eHWnM?autoplay=1&quot; width=&quot;100%&quot; height=&quot;141&quot; frameborder=&quot;0&quot; webkitAllowFullScreen=&quot;webkitAllowFullScreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowFullScreen=&quot;allowFullScreen&quot;&gt;&lt;/iframe&gt;">
+                                    <img alt="" src="{{ asset('images/211x141.png') }}">
+                                </div>
+                            </div>
+                            <br>
+
+                        </div>
+                    </aside>
+
+
+
+                </div>
+            </div>
+        </footer>
+
+        <div class="upToScrollWrapper">
+            <div class="upToScroll">
+                <a href="#" class="scrollToTop" title="Back to top">
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-1.11.3.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/jquery-migrate.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/vendor/__packed.js') }}"></script>
+    <!--<script type='text/javascript' src="{{ asset('js/vendor/SmoothScroll.min.js') }}"></script>-->
+    <script type='text/javascript' src="{{ asset('js/custom/shortcodes_init.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_utils.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/_front.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('js/custom/__main.js') }}"></script>
+
+    <!--<script type='text/javascript' src="{{ asset('custom_tools/js/_customizer.js') }}'></script>-->
+{% endblock %}
