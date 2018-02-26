@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    {% block head %}
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>KidsCare HTML</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/images/favicon.ico')}}"/>
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+    <link rel='stylesheet'  href="{{ asset('public/js/vendor/new-royalslider/lib/royalslider/royalslider.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/fontello.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/animation.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/shortcodes.css') }}"  type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('public/css/responsive.css') }}" type='text/css' media='all'/>
+
+
+
+
+
+
+
+        <script src="{{ asset('public/js/vendor/html5.js') }}" type="text/javascript"></script>
+        <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-1.11.3.min.js') }}"> </script>
+        <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-migrate.min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('public/js/vendor/new-royalslider/lib/royalslider/jquery.royalslider.min.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('public/js/vendor/__packed.js') }}"></script>
+        <!--<script type='text/javascript' src="{{ asset('public/js/vendor/SmoothScroll.min.js') }}"></script>-->
+        <script type='text/javascript' src="{{ asset('public/js/custom/shortcodes_init.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('public/js/custom/_utils.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('public/js/custom/_front.js') }}"></script>
+        <script type='text/javascript' src="{{ asset('public/js/custom/__main.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('public/js/custom/_googlemap_init.js') }}"></script>
+
+
+
+
+
+
+
+    <!--<link rel='stylesheet' href='custom_tools/css/customizer.css' type='text/css' media='all'/>-->
+
+    {% endblock head %}
+
+
+
+
+
+</head>
+
+<body class="page themerex_body fullscreen top_panel_below video_bg theme_skin_kidscare">
+{% block menu %}
+
+
+
+    <style>
+
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+    </style>
+
+
+
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" style="display:none;">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div style="overflow: auto;" class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 style="color: white">Mon Panier : </h2>
+            </div>
+            <div class="modal-body">
+
+
+                {% if paniers is defined %}
+                    {% for panier in paniers %}
+                <div id="panier">
+                        Produit: {{ panier.produitId }}
+
+                            <input type="number" name="quantite" id={{ panier.id }} min="1">
+                            <input type="submit" name="update" value="Update" onclick="update({{ panier.id }})">
+                            <div id={{ panier.id }}{{ panier.id }}>{{ panier.prixTotal }}</div><br>
+
+                </div>
+                    {% endfor %}
+
+
+                    <br>
+
+                    Prix Total: <div id="prixTotal">{{ prixTotal }}
+                    </div>
+                    <form action="{{ path('validerPanier') }}">
+                        <input type="submit" name="valider" value="Valider panier">
+                    </form>
+                {% endif %}
+
+            </div>
+
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function update(id)
+        {
+            var body = 2;
+            var UrlEdit = "{{ path('updtatePanier', { 'id': "id", 'body': "bod" }) }}";
+            UrlEdit = UrlEdit.replace("bod", body);
+            UrlEdit = UrlEdit.replace("id", id);
+            $.ajax({
+                method: 'POST',
+                url: UrlEdit,
+                success: function(d){
+                   // alert(d.nouveauPrix);
+                    document.getElementById(id+""+id).innerHTML = d.nouveauPrix;
+                    var prixTotal = parseInt(document.getElementById("prixTotal").innerText);
+                    //alert(prixTotal);
+                    prixTotal+=d.nouveauPrix;
+                    document.getElementById("prixTotal").innerHTML = prixTotal;
+                }
+            });
+        }
+    </script>
+
+
+    <div class="main_content">
+                <header class="noFixMenu menu_right without_user_menu">
+                    <div class="topWrapFixed"></div>
+                    <div class="topWrap">
+                        <div class="mainmenu_area">
+                            <div class="main with_logo_left">
+                                <div class="logo logo_left">
+                                    <a href="index.html">
+                                        <img src="{{ asset('public/images/152x34.png')}}" class="logo_main" alt="">
+                                        <img src="{{ asset('public/images/152x34.png')}}" class="logo_fixed" alt="">
+                                        <span class="logo_slogan"></span>
+                                    </a>
+                                </div>
+                                <div class="search" title="Open/close search form">
+                                    <div class="searchForm">
+                                        <form method="get" class="search-form" action="#">
+                                            <button type="submit" class="searchSubmit" title="Start search">
+                                                <span class="icoSearch"></span>
+                                            </button>
+
+                                            <input type="text" class="searchField" placeholder="Search &hellip;" value="" name="s" title="Search for:"/>
+                                        </form>
+                                    </div>
+
+                                    <div class="ajaxSearchResults"></div>
+
+
+                                </div>
+                                {% if not app.user %}
+                                <a style="margin-left: 72%;" title="Posts pages" href="{{ path('fos_user_registration_register') }}">
+                                    <span class="fas fa-sign-in-alt"></span>
+                                    Inscription
+                                </a>
+                                <a style="margin-left: 1%;" title="Posts pages" href="{{ path('fos_user_security_login') }}">
+                                    <span class="fas fa-sign-in-alt"></span>
+                                    Se Connecter
+                                </a>
+                                {% endif %}
+
+                                {% if app.user %}
+
+                                    <span  style="
+                                    margin-left: -23%;"  class="fas fa-sign-in-alt">Bonjour</span>
+                                    <a style="margin-left: 1%;" title="Posts pages" href="{{ path('Dashboard') }}">
+                                        <span class="fas fa-sign-in-alt"></span>
+                                       {{ app.user.username }}
+                                    </a>
+                                    <a style="margin-left: 1%;" title="Posts pages" href="{{ path('fos_user_security_logout') }}">
+                                        <span class="fas fa-sign-in-alt"></span>
+                                        Logout
+                                    </a>
+
+                                {% endif %}
+                                <a href="#" class="openResponsiveMenu">Menu</a>
+                                <nav role="navigation" class="menuTopWrap topMenuStyleLine">
+                                    <ul id="mainmenu" class="">
+                                        <li class="menu-item menu-item-has-children" id="panier">
+                                            <button style=" background-color: Transparent;background-repeat:no-repeat;border: none;cursor:pointer;overflow: hidden;"  onclick="modal.style.display = 'block';" ><img src="{{ asset('public/images/cart.png')}}"> </img> </button>
+
+                                        </li>
+
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="index.html">Activities</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="headers-standard.html">Club</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="headers-transparent.html">Parc</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="headers-central-menu.html">Evenement</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="headers-video.html">Les Evenements de la Semaine</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="index.html">Learn and Play</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="headers-standard.html">Lecture de contes</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="features-tools-shortcodes-zoom.html">Lire un conte</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="headers-standard.html">Passer un quizz</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+
+
+                                                <li class="menu-item">
+                                                    <a href="headers-standard.html">Consulter nos cours </a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="">Cours de Français</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="">Cours d'Anglais</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="">Articles Scientifiques</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+
+
+
+                                                <li class="menu-item">
+                                                    <a href="headers-transparent.html">Jeux Educatifs</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="headers-transparent.html">de 3 à 5 ans</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="headers-transparent.html">de 5 à 7 ans</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="headers-transparent.html">de 7 à 10 ans</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="headers-central-menu.html">Liste des Garderies</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="headers-video.html"></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li class="menu-item menu-item-has-children">
+                                            <a title="Layouts and hovers" href="{{ path('Front') }}">
+                                                <span class="menu_icon icon-thumbs-up"></span>
+                                                Our Shops
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item menu-item-has-children">
+                                                    <a href="{{ path('FrontBoutiques') }}">Nos Boutiques</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-classic-1-column.html"> Boutique de Vêtements</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-classic-2-columns.html"> Boutique de Jouets</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-classic-2-columns-with-sidebar.html">Boutique de Décoration</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children">
+                                                    <a href="{{ path('FrontProducts') }}">Nos Produits</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-masonry-2-columns.html">Jouets</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-masonry-2-columns-with-sidebar.html">Vêtements</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-masonry-3-columns.html">Décoration</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-masonry-3-columns-with-sidebar.html">Livres</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+                                                <li >
+                                                    <a href="#">Meilleurs Boutiques</a>
+
+                                                </li>
+                                                <li >
+                                                    <a href="#">Boutiques proches de vous </a>
+
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a title="Posts pages" href="#">
+                                                <span class="menu_icon icon-note"></span>
+                                                SANTE
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item menu-item-has-children">
+                                                    <a href="#">Pédiatres</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="features-tools-post-formats-n-all-widgets.html">With sidebar</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="portfolio-blog-classic-without-sidebar.html">Without sidebar</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">Guide d'Alimentation</a>
+
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="blog-timeline.html">Forum</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="blog-tabs.html">Tutoriels</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="menu-item menu-item-has-children">
+                                            <a title="Posts pages" href="index.html">
+                                                <span class="menu_icon icon-note"></span>
+                                                Babysitters
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="#">Babysitters Near you </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="#">Search for a Babysitter </a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="blog-timeline.html">Full list</a>
+                                                </li>
+                                                <li class="menu-item menu-item-has-children">
+                                                    <a href="blog-tabs.html">My Subscriptions</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="">My Payments</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="">My Notifcations (0)</a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="">Send Message to My Babysitter</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            {% endblock menu %}
+
+
+{% block content %}
+
+{% endblock content %}
+
+
+        <!--<script type='text/javascript' src='custom_tools/js/_customizer.js'></script>-->
+            <footer class="footerWrap footerStyleLight contactFooterWrap">
+                {% block footer %}
+                <div class="main contactFooter">
+                    <section>
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="{{ asset('public/images/logo-footer5.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="contactAddress">
+                            <address class="addressRight">
+                                Phone: 1.800.123.4567<br>
+                                Fax: 1.800.123.4566
+                            </address>
+                            <address class="addressLeft">
+                                San Francisco, CA 94102, US<br>
+                                1234, Some Str.
+                            </address>
+                        </div>
+                        <div class="contactTtextLine">Share this page with friends who need help in 2015, too.</div>
+                        <div class="contactShare">
+                            <ul>
+                                <li>
+                                    <a class="social_icons facebook_image fShare" href="http://facebook.com" target="_blank" title="Facebook">
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons pinterest_image fShare" href="http://pinterest.com" target="_blank" title="Pinterest">
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons twitter_image fShare" href="http://twitter.com" target="_blank" title="Twitter">
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons gplus_image fShare" href="http://gplus.com" target="_blank" title="Gplus">
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons linkedin_image fShare" href="http://linkedin.com" target="_blank" title="Linkedin">
+                                        <span></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="social_icons vimeo_image fShare" href="http://vimeo.com" target="_blank" title="Vimeo">
+                                        <span></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                {% endblock footer %}
+            </footer>
+
+</body>
+
+
+</html>

@@ -1,0 +1,139 @@
+{% extends "BoutiqueBundle::BackLayout.html.twig" %}
+{% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Star Admin</title>
+    <link rel="stylesheet" href="{{ asset('public2/node_modules/font-awesome/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public2/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public2/node_modules/flag-icon-css/css/flag-icon.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public2/css/style.css') }}" />
+    <link rel="shortcut icon" href="{{ asset('public2/images/favicon.png') }}" />
+
+
+
+
+
+
+
+    <script src="{{ asset('public2/node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('public2/node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('public2/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public2/node_modules/chart.js/dist/Chart.min.js') }}"></script>
+    <script src="{{ asset('public2/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('public2/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('public2/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public2/js/misc.js') }}"></script>
+    <script src="{{ asset('public2/js/chart.js') }}"></script>
+    <script src="{{ asset('public2/js/maps.js') }}"></script>
+
+{% endblock head %}
+
+{% block content %}
+
+    <nav class="navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="bg-white text-center navbar-brand-wrapper">
+            <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('public2/images/logo_star_black.png') }}" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('public2/images/logo_star_mini.jpg') }}" alt=""></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center">
+            <button class="navbar-toggler navbar-toggler d-none d-lg-block navbar-dark align-self-center mr-3" type="button" data-toggle="minimize">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="form-inline mt-2 mt-md-0 d-none d-lg-block">
+                <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
+            </form>
+            <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
+                <li class="nav-item">
+                    <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="{{ asset('public2/images/face.jpg') }}" alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
+                </li>
+            </ul>
+            <button class="navbar-toggler navbar-dark navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+
+        <div class="card-deck">
+            <div class="card col-lg-12 px-0 mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Liste des Boutiques</h5>
+
+    {% for boutique in boutiques %}
+
+
+                                <div class="clearfix">
+
+                                        <h4 class="text-primary">
+                                          <a href="{{ path('CreateProductBoutique',{'id':boutique.getId()}) }}"> <h5 class="card-title">{{ boutique.getNomBoutique() }}</h5></a>
+                                            <img src="{{ asset('public/images/'~boutique.getImage()) }}" class="img-rounded" style="width: 35%;"/>
+                                        </h4>
+
+                                        <div class="card-body">
+
+                                        </div>
+
+                                    <div class="float-right"  style="margin-top: -25%;margin-right: 39%;margin-left: -43%;">
+                                        <h6> <p class="card-text text-dark"> <label class="text-primary">Nom Responsable :</label> {{ boutique.getNomResponsableBoutique() }}</p></h6>
+                                        <h6> <p class="card-text text-dark"> <label class="text-primary">Adresse :</label> {{ boutique.getAdresse() }}</p></h6>
+                                        <h6> <p class="card-text text-dark"> <label class="text-primary">Contact :</label> {{ boutique.getContact() }}</p></h6>
+                                        <h6><p class="card-text text-dark"> <label class="text-primary">Fournisseur :</label> {{ boutique.getFournisseur() }}</p></h6>
+                                        <h6> <p class="card-text text-dark"> <label class="text-primary">Type de Boutique :</label> {{ boutique.getType() }}</p></h6>
+                                       <a href="{{ path('FetchBoutique',{'id':boutique.getId()}) }}"> <i class="fa fa-edit" style="font-size:36px;color:darkred"></i></a>
+
+                                    </div>
+                                </div>
+
+
+
+    {% endfor %}
+
+                    <div class="table-responsive">
+
+
+                        <table class="table center-aligned-table">
+                            <thead>
+                            <tr class="text-primary">
+
+                                <th>Nom boutique</th>
+                                <th>Responsable boutique</th>
+                                <th>Adresse boutique</th>
+                                <th>Contacs boutique</th>
+                                <th>Fournisseur boutique</th>
+                                <th>Type de la boutique</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                             {% for boutique in boutiques %}
+                                 <tr class="">
+
+                                 <td>{{ boutique.getNomBoutique() }}</td>
+                                 <td>{{ boutique.getNomResponsableBoutique() }}</td>
+                                 <td>{{ boutique.getAdresse() }}</td>
+                                 <td>{{ boutique.getContact() }}</td>
+                                 <td>{{ boutique.getFournisseur() }}</td>
+                                 <td>{{ boutique.getType() }}</td>
+                                 <td><img src="{{ asset('public/images/'~boutique.getImage()) }}" class="img-rounded" style="height: 13%;" /></td>
+                                 <td><a href="{{ path('SupprimerBoutique',{'id':boutique.getId()}) }}" class="btn btn-outline-success btn-sm">Delete</a></td>
+                                 <td><a href="#" class="btn btn-outline-warning btn-sm">Cancel</a></td>
+                                 </tr>
+
+                             {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,108 @@
+boutique_homepage:
+    path:     /
+    defaults: { _controller: BoutiqueBundle:Boutique:Front }
+Front:
+    path:     /Front
+    defaults: { _controller: BoutiqueBundle:Boutique:Front }
+FrontProducts:
+    path:     /FrontProducts
+    defaults: { _controller: BoutiqueBundle:Produit:Front }
+
+
+
+FrontBoutiques:
+    path:     /FrontBoutiques
+    defaults: { _controller: BoutiqueBundle:Boutique:DisplayBoutiques}
+
+FrontPanier:
+    path:     /FrontPanier
+    defaults: { _controller: BoutiqueBundle:Boutique:FrontPanier}
+
+
+Dashboard:
+    path:    /Dashboard
+    defaults: { _controller: BoutiqueBundle:Boutique:Dashboard }
+
+CreateBoutique:
+    path:    /CreateBoutique
+    defaults: { _controller: BoutiqueBundle:Boutique:Create }
+CreateProduct:
+    path:    /CreateProduct
+    defaults: { _controller: BoutiqueBundle:Produit:Create }
+
+CreateProductBoutique:
+    path:    /CreateProductBoutique/{id}
+    defaults: { _controller: BoutiqueBundle:Produit:Createe }
+PromoProduit:
+    path:    /PromoProduit
+    defaults: { _controller: BoutiqueBundle:Produit:Promo }
+
+ShowBoutique:
+    path:    /ShowBoutique
+    defaults: { _controller: BoutiqueBundle:Boutique:Show }
+ShowProduct:
+    path:    /ShowProduct
+    defaults: { _controller: BoutiqueBundle:Produit:Show }
+
+SupprimerBoutique:
+    path:     /SupprimerBoutique
+    defaults: { _controller: BoutiqueBundle:Boutique:Delete }
+SupprimerProduit:
+    path:     /SupprimerProduit
+    defaults: { _controller: BoutiqueBundle:Produit:Delete }
+
+FetchBoutique:
+    path:     /FetchBoutique
+    defaults: { _controller: BoutiqueBundle:Boutique:Fetch}
+FetchProduct:
+    path:     /FetchProduct
+    defaults: { _controller: BoutiqueBundle:Produit:Fetch}
+GetProduct:
+    path:     /DisplayProduct
+    defaults: { _controller: BoutiqueBundle:Produit:DisplayProduct}
+GetBoutiques:
+    path:     /DisplayBoutiques
+    defaults: { _controller: BoutiqueBundle:Boutique:FindBoutiqueByName}
+
+UpdateBoutique:
+    path:     /UpdateBoutique
+    defaults: { _controller: BoutiqueBundle:Boutique:Update}
+UpdateProduct:
+    path:     /UpdateProduct
+    defaults: { _controller: BoutiqueBundle:Produit:Update}
+
+afficher_produitAJAXDQL:
+    path:     /AfficherProduitAjaxDQL
+    defaults: { _controller: BoutiqueBundle:Produit:DisplayProduitAJAXDQL }
+
+register:
+    path:     /register
+
+
+
+ajouterAuPanier:
+    path:     /ajouterAuPanier/{id}
+    defaults: { _controller: BoutiqueBundle:Default:ajouterauPanier }
+
+afficherPanier:
+    path:     /afficherPanier
+    defaults: { _controller: BoutiqueBundle:Default:AfficherPanier }
+
+afficherProduits:
+    path:     /afficherProduits
+    defaults: { _controller: BoutiqueBundle:Default:AfficherProduits }
+
+updtatePanier:
+    path:     /updatePanier/{id}/{body}
+    defaults: { _controller: BoutiqueBundle:Default:UpdatePanier }
+
+validerPanier:
+    path:     /validerPanier
+    defaults: { _controller: BoutiqueBundle:Default:ValiderPanier }
+
+PasserCommande:
+    path:     /PasserCommande
+    defaults: { _controller: BoutiqueBundle:Default:AjouterCommande }
+
+
+

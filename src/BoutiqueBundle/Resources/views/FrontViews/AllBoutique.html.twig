@@ -1,0 +1,451 @@
+{% extends "BoutiqueBundle::Layout.html.twig" %}
+{% block head %}
+    <title>KidsCare HTML</title>
+    <link rel='stylesheet'  href="{{ asset('public/js/vendor/new-royalslider/lib/royalslider/royalslider.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/fontello.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/animation.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/shortcodes.css') }}"  type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('public/css/responsive.css') }}" type='text/css' media='all'/>
+
+
+
+
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woocommerce-layout.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woocommerce-smallscreen.css') }}"  type='text/css' media='only screen and (max-width: 768px)'/>
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woocommerce.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/__packed.css') }}" type='text/css'  media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/fontello.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/animation.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woo-style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/shortcodes.css') }}"  type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}"  type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('public/css/responsive.css') }}"  type='text/css' media='all'/>
+
+
+    <style id='theme-skin-inline-css'  type='text/css'></style>
+
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+
+
+
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+
+
+
+
+
+
+
+    <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-1.11.3.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-migrate.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-ui.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/vendor/__packed.js') }}"></script>
+
+    <script type='text/javascript' src="{{ asset('public/js/custom/shortcodes_init.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/custom/_utils.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/custom/_front.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/custom/__main.js') }}"></script>
+
+
+
+
+
+
+
+
+
+
+{% endblock head %}
+
+{% block content %}
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="index.html">Home</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="#">All Posts</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Classic (2 columns)</span>
+            </div>
+            <h3 class="pageTitle h3">Classic (2 columns)</h3>
+        </div>
+    </div>
+
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+
+                <section class="no_margin no_padding">
+                    <div class="container">
+                        <div class="masonryWrap">
+                            <div class="">
+                                <ul>
+
+                                    <li class="squareButton active">
+                                        <a href="{{ path('Front') }}">All</a>
+                                    </li>
+                                    <li class="squareButton">
+                                     <a href="{{ path('Front') }}" data-filter=".flt_71" >Jouets</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_66">creative</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_61">design</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_64">nature</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_65">holidays</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_69">music</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <a href="#" data-filter=".flt_68">health</a>
+                                    </li>
+                                    <li class="squareButton">
+                                        <form method="post" class="search-form" action="{{ path('GetBoutiques') }}">
+
+                                            <input type="text" class="searchField" placeholder="Search &hellip;" value="" name="search" title="Search for:"/>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <section class="masonry isotope" data-columns="2">
+                                <article class="isotopeElement post_format_standard odd flt_71 flt_66 flt_61">
+                                    {% for boutique in boutiques %}
+                                    <div class="isotopePadding">
+                                        <div class="thumb hoverIncrease" data-image="{{ asset('public/images/'~boutique.getImage()) }}" data-title="Summer Childcare Questions">
+                                            <img alt="Summer Childcare Questions" src="{{ asset('public/images/'~boutique.getImage()) }}">
+                                        </div>
+                                        <h4>
+                                            <a href="{{ path('FrontProductsByBoutique', { 'id': boutique.getId() }) }}">{{ boutique.getNomBoutique() }}</a>
+                                        </h4>
+                                        <p> Adresse : {{ boutique.getAdresse() }} </p>
+                                        <p> Numéro : {{ boutique.getContact() }} </p>
+
+                                        <div class="masonryMore">
+                                            <ul>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-link" title="More" href="#">More</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-eye" title="Views - 142" href="#">142</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-comment-1" title="Comments - 0" href="#">0</a>
+                                                </li>
+                                                <li class="squareButton light ico">
+                                                    <a class="icon-star-1" title="Rating - 85.5" href="#">85.5</a>
+                                                </li>
+                                                <li class="squareButton light ico likeButton like" data-postid="954" data-likes="2" data-title-like="Like" data-title-dislike="Dislike">
+                                                    <a class="icon-heart-1" title="Like - 2" href="#">
+                                                        <span class="likePost">2</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <span class="inlineShadow"></span>
+                                    </div>
+                                    {% endfor %}
+                                </article>
+
+
+                            </section>
+
+                        </div>
+
+                        <div id="pagination" class="pagination">
+                            <ul class="pageLibrary">
+                                <li class="pager_pages libPage">
+                                    Page
+                                    <input class="navInput" readonly="readonly" type="text" size="1" value="1"> of 2
+                                    <div id="pageNavSlider" class="boxShadow pageFocusBlock navPadding">
+                                        <div class="sc_slider sc_slider_swiper sc_slider_controls sc_slider_controls_top sc_slider_nopagination sc_slider_noautoplay swiper-slider-container">
+                                            <ul class="slides swiper-wrapper" data-current-slide="1">
+                                                <li class="swiper-slide">
+                                                    <div class="pageNumber">
+                                                        <table>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <a href="#" class="active">1</a>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="#">2</a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <ul class="flex-direction-nav">
+                                            <li>
+                                                <a class="flex-prev" href="#">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="flex-next" href="#">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="pager_next ico right squareButton light">
+                                    <a href="#">Next </a>
+                                </li>
+                                <li class="pager_last ico right squareButton light">
+                                    <a href="#">Last </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContentWrap">
+
+        <footer class="footerWrap footerStyleDark">
+            <div class="main footerWidget widget_area">
+                <div class="columnsWrap">
+                    <aside class="columns1_4 widgetWrap widget widget_advert">
+                        <div class="widget_advert_inner">
+                            <figure class="sc_image  sc_image_shape_square">
+                                <img src="images/150x36.png" alt="">
+                            </figure>
+                            <br>
+                            <div class="sc_video_player">
+                                <div class="sc_video_frame sc_video_play_button" data-video="&lt;iframe class=&quot;video_frame&quot; src=&quot;https://youtube.com/embed/636Dp8eHWnM?autoplay=1&quot; width=&quot;100%&quot; height=&quot;141&quot; frameborder=&quot;0&quot; webkitAllowFullScreen=&quot;webkitAllowFullScreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowFullScreen=&quot;allowFullScreen&quot;&gt;&lt;/iframe&gt;">
+                                    <img alt="" src="images/211x141.png">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="footer_contacts">
+                                <span class="sc_icon icon-home theme_accent"></span>
+                                378 Main Street London<br>
+                                <span class="sc_icon icon-email theme_accent"></span>
+                                info@example.com<br>
+                                <span class="sc_icon icon-phone theme_accent"></span>
+                                +1 (44) 123-45-67
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="columns1_4 widgetWrap widget widget_calendar">
+                        <div id="calendar_wrap">
+                            <table class="sc_calendar">
+                                <caption>December 2015</caption>
+                                <thead>
+                                <tr>
+                                    <th scope="col" title="Monday">M</th>
+                                    <th scope="col" title="Tuesday">T</th>
+                                    <th scope="col" title="Wednesday">W</th>
+                                    <th scope="col" title="Thursday">T</th>
+                                    <th scope="col" title="Friday">F</th>
+                                    <th scope="col" title="Saturday">S</th>
+                                    <th scope="col" title="Sunday">S</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="3" class="prev">
+                                        <a href="#">&laquo; Nov</a>
+                                    </td>
+                                    <td class="pad">&nbsp;</td>
+                                    <td colspan="3" class="next">&nbsp;</td>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr>
+                                    <td colspan="1" class="pad">&nbsp;</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td id="today">10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>28</td>
+                                    <td>29</td>
+                                    <td>30</td>
+                                    <td>31</td>
+                                    <td class="pad" colspan="3">&nbsp;</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </aside>
+                    <aside class="columns1_4 widgetWrap widget widget_recent_comments">
+                        <h3 class="title">Recent Comments</h3>
+                        <ul id="recentcomments">
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Little Known on How to Best Help Kids After Trauma</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Babysitter and Nanny Hiring Resources</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Quote post</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">Miki Williams</span>
+                                on
+                                <a href="#">Link post</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">Miki Williams</span>
+                                on
+                                <a href="#">Theme Slider instead of WP Gallery</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Status post</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="columns1_4 widgetWrap widget widget_recent_entries">
+                        <h3 class="title">Recent Posts</h3>
+                        <ul>
+                            <li>
+                                <a href="#">How to Teach Children to Think for Themselves</a>
+                            </li>
+                            <li>
+                                <a href="#">How to Keep Your Kids Healthy at School</a>
+                            </li>
+                            <li>
+                                <a href="#">Negotiating With A Kid</a>
+                            </li>
+                            <li>
+                                <a href="#">Sharing the Chores at Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Kids and TV- Effects of Television on Children</a>
+                            </li>
+                            <li>
+                                <a href="#">Why Play is Important to Children</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </footer>
+
+        <div class="upToScrollWrapper">
+            <div class="upToScroll">
+                <a href="#" class="scrollToTop" title="Back to top">
+                </a>
+            </div>
+        </div>
+        <div class="copyWrap">
+            <div class="copy main">
+                <div class="copyright">
+                    <a href="http://themeforest.net/user/axiomthemes/portfolio">Axiom</a> &copy; 2015 All Rights Reserved
+                    <a href="#">Terms of Use</a>
+                    and <a href="#">Privacy Policy</a>
+                </div>
+                <div class="copy_socials socPage">
+                    <ul>
+                        <li>
+                            <a class="social_icons social_facebook facebook_image" target="_blank" href="http://facebook.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_pinterest pinterest_image" target="_blank" href="http://pinterest.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_twitter twitter_image" target="_blank" href="http://twitter.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_gplus gplus_image" target="_blank" href="http://gplus.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_linkedin linkedin_image" target="_blank" href="http://linkedin.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_vimeo vimeo_image" target="_blank" href="http://vimeo.com">
+                                <span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+{% endblock content %}

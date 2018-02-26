@@ -1,0 +1,17 @@
+{% block model %}
+Votre Panier:
+{% for panier in paniers %}
+    Produit: {{ panier.produitId }}
+    <form action="{{ path('updtatePanier', { 'id': panier.id }) }}" method="POST">
+        <input type="number" name="quantite">
+        <input type="submit" name="update" value="Update">
+        {{ panier.prixTotal }}<br>
+    </form>
+{% endfor %}
+<br>
+Prix Total: {{ prixTotal }}
+
+    <form action="{{ path('validerPanier') }}">
+        <input type="submit" name="valider" value="Valider panier">
+    </form>
+{% endblock %}

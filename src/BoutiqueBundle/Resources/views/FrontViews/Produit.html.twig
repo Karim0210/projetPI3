@@ -1,0 +1,6 @@
+{% for produit in produits %}
+<p>Nom: </p>
+<p>Prix: </p>{{ produit.prix }}
+<p> Quantite</p>
+<a href="{{ path('ajouterAuPanier', { 'id': produit.getId() }) }}">Ajouter</a>
+{% endfor %}

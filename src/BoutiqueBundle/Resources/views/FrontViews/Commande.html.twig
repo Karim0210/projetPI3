@@ -1,0 +1,395 @@
+{% extends "BoutiqueBundle::Layout.html.twig" %}
+{% block head %}
+    <title>KidsCare HTML</title>
+    <link rel='stylesheet'  href="{{ asset('public/js/vendor/new-royalslider/lib/royalslider/royalslider.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/__packed.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/fontello.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/animation.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/shortcodes.css') }}"  type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('public/css/responsive.css') }}" type='text/css' media='all'/>
+
+
+
+
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woocommerce-layout.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woocommerce-smallscreen.css') }}"  type='text/css' media='only screen and (max-width: 768px)'/>
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woocommerce.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/__packed.css') }}" type='text/css'  media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/fontello.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/fontello/css/animation.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/woo/woo-style.css') }}"  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{ asset('public/css/shortcodes.css') }}"  type='text/css' media='all'/>
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}"  type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+    <link rel='stylesheet' href="{{ asset('public/css/responsive.css') }}"  type='text/css' media='all'/>
+
+
+    <style id='theme-skin-inline-css'  type='text/css'></style>
+
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+
+
+
+    <link id="theme-skin-css" rel='stylesheet' href="{{ asset('public/css/kidscare.css') }}" type='text/css' media='all'/>
+    <style id='theme-skin-inline-css' type='text/css'></style>
+
+
+
+
+
+
+
+    <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-1.11.3.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-migrate.min.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/vendor/jquery-ui.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/vendor/__packed.js') }}"></script>
+
+    <script type='text/javascript' src="{{ asset('public/js/custom/shortcodes_init.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/custom/_utils.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/custom/_front.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('public/js/custom/__main.js') }}"></script>
+
+
+
+
+
+
+
+
+
+
+{% endblock head %}
+
+{% block content %}
+
+
+    <div id="topOfPage" class="topTabsWrap">
+        <div class="main">
+            <div class="speedBar">
+                <a class="home" href="index.html">Home</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <a class="all" href="#">All Posts</a>
+                <span class="breadcrumbs_delimiter">
+							<i class="icon-right-open-mini"></i>
+						</span>
+                <span class="current">Contact Us</span>
+            </div>
+            <h3 class="pageTitle h3">Contact Us</h3>
+        </div>
+    </div>
+
+    <div class="mainWrap without_sidebar">
+        <div class="main">
+            <div class="content">
+                <section class="post no_margin post_format_standard postAlter page type-page">
+                    <article class="post_content">
+                        <div class="post_text_area">
+
+                            <section class="no_padding">
+                                <div class="container">
+
+
+                                </div>
+                            </section>
+
+                            <section class="no_padding">
+                                <div class="container">
+                                    <div class="columnsWrap sc_columns sc_columns_count_3 margin_top_middle margin_bottom_middle">
+                                        <div class="columns2_3 sc_column_item sc_column_item_1 odd first span_2">
+                                            <div class="sc_contact_form sc_contact_form_contact contact_form_1">
+                                                <h1 class="title">Veuillez Saisir vos Coordonnées  </h1>
+                                                <form class="contact_1" method="post" action="{{ path('PasserCommande') }}">
+                                                    <div class="columnsWrap">
+                                                        <div class="columns1_3">
+                                                            <label class="required" for="contact_form_username">Ville</label>
+                                                            <input type="text" name="Ville" id="contact_form_username">
+                                                        </div>
+                                                        <div class="columns1_3">
+                                                            <label class="required" for="contact_form_email">Etat/Region</label>
+                                                            <input type="text" name="EtatRegion" id="contact_form_email">
+                                                        </div>
+                                                        <div class="columns1_3">
+                                                            <label class="required" for="contact_form_subj">Code Postal</label>
+                                                            <input type="text" name="CodePostal" id="contact_form_subj">
+                                                        </div>
+                                                        </br> </br>  </br> </br> </br>
+                                                        <div class="columns1_3">
+                                                            <label class="required" for="contact_form_subj">Numéro Telephone</label>
+                                                            <input type="text" name="NumeroTelephone" id="contact_form_subj">
+                                                        </div>
+
+                                                        <div class="columns1_3">
+                                                            <label class="required" for="contact_form_subj">Pays</label>
+                                                            <input type="text" name="Pays" id="contact_form_subj">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="message">
+
+                                                    </div>
+                                                    <div class="sc_contact_form_button">
+                                                        <div class="squareButton sc_button_size sc_button_style_global global ico">
+                                                            <button type="submit" name="contact_submit" class="contact_form_submit ">Passer la commande </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="result sc_infobox"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="columns1_3 sc_column_item sc_column_item_3 odd after_span_2">
+                                            <h1 class="sc_title sc_title_regular">Business hours</h1>
+                                            <div class="work_days">
+                                                <p>
+                                                    Monday &#8211; Friday 9am to 5pm<br />
+                                                    Saturday &#8211; 9am to 2pm<br />
+                                                    Sunday &#8211; Closed
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContentWrap">
+
+        <footer class="footerWrap footerStyleDark">
+            <div class="main footerWidget widget_area">
+                <div class="columnsWrap">
+                    <aside class="columns1_4 widgetWrap widget widget_advert">
+                        <div class="widget_advert_inner">
+                            <figure class="sc_image  sc_image_shape_square">
+                                <img src="images/150x36.png" alt="">
+                            </figure>
+                            <br>
+                            <div class="sc_video_player">
+                                <div class="sc_video_frame sc_video_play_button" data-video="&lt;iframe class=&quot;video_frame&quot; src=&quot;https://youtube.com/embed/636Dp8eHWnM?autoplay=1&quot; width=&quot;100%&quot; height=&quot;141&quot; frameborder=&quot;0&quot; webkitAllowFullScreen=&quot;webkitAllowFullScreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowFullScreen=&quot;allowFullScreen&quot;&gt;&lt;/iframe&gt;">
+                                    <img alt="" src="images/211x141.png">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="footer_contacts">
+                                <span class="sc_icon icon-home theme_accent"></span>
+                                378 Main Street London<br>
+                                <span class="sc_icon icon-email theme_accent"></span>
+                                info@example.com<br>
+                                <span class="sc_icon icon-phone theme_accent"></span>
+                                +1 (44) 123-45-67
+                            </div>
+                        </div>
+                    </aside>
+                    <aside class="columns1_4 widgetWrap widget widget_calendar">
+                        <div id="calendar_wrap">
+                            <table class="sc_calendar">
+                                <caption>December 2015</caption>
+                                <thead>
+                                <tr>
+                                    <th scope="col" title="Monday">M</th>
+                                    <th scope="col" title="Tuesday">T</th>
+                                    <th scope="col" title="Wednesday">W</th>
+                                    <th scope="col" title="Thursday">T</th>
+                                    <th scope="col" title="Friday">F</th>
+                                    <th scope="col" title="Saturday">S</th>
+                                    <th scope="col" title="Sunday">S</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="3" class="prev">
+                                        <a href="#">&laquo; Nov</a>
+                                    </td>
+                                    <td class="pad">&nbsp;</td>
+                                    <td colspan="3" class="next">&nbsp;</td>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <tr>
+                                    <td colspan="1" class="pad">&nbsp;</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td id="today">10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>21</td>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                </tr>
+                                <tr>
+                                    <td>28</td>
+                                    <td>29</td>
+                                    <td>30</td>
+                                    <td>31</td>
+                                    <td class="pad" colspan="3">&nbsp;</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </aside>
+                    <aside class="columns1_4 widgetWrap widget widget_recent_comments">
+                        <h3 class="title">Recent Comments</h3>
+                        <ul id="recentcomments">
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Little Known on How to Best Help Kids After Trauma</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Babysitter and Nanny Hiring Resources</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Quote post</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">Miki Williams</span>
+                                on
+                                <a href="#">Link post</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">Miki Williams</span>
+                                on
+                                <a href="#">Theme Slider instead of WP Gallery</a>
+                            </li>
+                            <li class="recentcomments">
+                                <span class="comment-author-link">John Doe</span>
+                                on
+                                <a href="#">Status post</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="columns1_4 widgetWrap widget widget_recent_entries">
+                        <h3 class="title">Recent Posts</h3>
+                        <ul>
+                            <li>
+                                <a href="#">How to Teach Children to Think for Themselves</a>
+                            </li>
+                            <li>
+                                <a href="#">How to Keep Your Kids Healthy at School</a>
+                            </li>
+                            <li>
+                                <a href="#">Negotiating With A Kid</a>
+                            </li>
+                            <li>
+                                <a href="#">Sharing the Chores at Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Kids and TV- Effects of Television on Children</a>
+                            </li>
+                            <li>
+                                <a href="#">Why Play is Important to Children</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </footer>
+
+        <div class="upToScrollWrapper">
+            <div class="upToScroll">
+                <a href="#" class="scrollToTop" title="Back to top">
+                </a>
+            </div>
+        </div>
+        <div class="copyWrap">
+            <div class="copy main">
+                <div class="copyright">
+                    <a href="http://themeforest.net/user/axiomthemes/portfolio">Axiom</a> &copy; 2015 All Rights Reserved
+                    <a href="#">Terms of Use</a>
+                    and <a href="#">Privacy Policy</a>
+                </div>
+                <div class="copy_socials socPage">
+                    <ul>
+                        <li>
+                            <a class="social_icons social_facebook facebook_image" target="_blank" href="http://facebook.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_pinterest pinterest_image" target="_blank" href="http://pinterest.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_twitter twitter_image" target="_blank" href="http://twitter.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_gplus gplus_image" target="_blank" href="http://gplus.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_linkedin linkedin_image" target="_blank" href="http://linkedin.com">
+                                <span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="social_icons social_vimeo vimeo_image" target="_blank" href="http://vimeo.com">
+                                <span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+    </div>
+
+{% endblock content %}
