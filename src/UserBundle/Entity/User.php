@@ -11,13 +11,17 @@ use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\GroupInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserRepository")
  * @ORM\Table(name="user")
  */
 class User extends BaseUser
 {
+
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
